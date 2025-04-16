@@ -1,10 +1,10 @@
-import { Router } from "./routes/Router";
 import "./App.css";
+import { Rotas } from "./Routes/Rotas";
 
 function App() {
   return (
     <>
-      <Router />
+      <Rotas />
     </>
   );
 }
