@@ -1,14 +1,10 @@
 import { Route, Routes, BrowserRouter } from "react-router-dom";
-import { PrivateRoute } from "../components/PrivateRoute/PriveteRoute";
+import { TesteComponentes } from "../pages/TesteComponentes/TesteComponentes";
 export const Rotas = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/cadastro" element={<Cadastro />} />
-        <Route path="esqueci-senha" element={<EsqueciSenha />} />
-        <Route path="/recuperar-senha" element={<RecuperarSenha />} />
-        <Route path="/home" element={<PrivateRoute element={<Home />} />} />
+        <Route path="/teste" element={<TesteComponentes />} />
       </Routes>
     </BrowserRouter>
   );
