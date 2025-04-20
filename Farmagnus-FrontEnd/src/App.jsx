@@ -1,5 +1,6 @@
 import "./App.css";
 import "./public/colors.module.css";
+import "./public/reset.css";
 import { Rotas } from "./Routes/Rotas";
 
 function App() {
