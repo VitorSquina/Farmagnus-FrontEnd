@@ -1,16 +1,22 @@
-import styles from "./Login.module.css";
+// React Router
 import { NavLink } from "react-router-dom";
+// React
+import { useState } from "react";
+// Components
+import { PopOver } from "../../components/PopOver/PopOver";
+// CSS
+import styles from "./Login.module.css";
 
 export const Login = () => {
+  const [cnpj, setCnpj] = useState("");
+  const [senha, setSenha] = useState("");
+  const [erro, setErro] = useState("");
   return (
     <div className={styles.container}>
-      <div className={styles.loginContainer}>
-        <div className={styles.header}>
-          <h1 className="tittle">Acesso ao Sistema</h1>
-          <p className="text">
-            Entre com seu CNPJ e senha para acessar o sistema
-          </p>
-        </div>
+      <PopOver
+        title={"Acesso ao Sistema"}
+        text={"Entre com seu CNPJ e senha para acessar o sistema"}
+      >
         <form className={styles.form}></form>
         <div className={styles.footer}>
           <NavLink to={"/recuperar-senha"} className="link">
@@ -23,7 +29,7 @@ export const Login = () => {
             </NavLink>
           </p>
         </div>
-      </div>
+      </PopOver>
     </div>
   );
 };

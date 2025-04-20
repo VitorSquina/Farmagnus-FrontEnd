@@ -1,16 +1,14 @@
 import { NavLink } from "react-router-dom";
+import { PopOver } from "../../components/PopOver/PopOver";
 import styles from "./RecuperarSenha.module.css";
 
 export const RecuperarSenha = () => {
   return (
     <div className={styles.container}>
-      <div className={styles.formContainer}>
-        <div className={styles.header}>
-          <h1 className="tittle">Recuperação de senha</h1>
-          <p className="text">
-            Informe seu email para receber um código de recuperação
-          </p>
-        </div>
+      <PopOver
+        title={"Recuperação de Senha"}
+        text={"Informe seu email para receber um código de recuperação"}
+      >
         <form className={styles.form}></form>
         <div className={styles.footer}>
           <p className="text">
@@ -20,7 +18,7 @@ export const RecuperarSenha = () => {
             </NavLink>
           </p>
         </div>
-      </div>
+      </PopOver>
     </div>
   );
 };
