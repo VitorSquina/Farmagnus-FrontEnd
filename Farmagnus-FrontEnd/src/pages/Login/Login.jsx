@@ -6,19 +6,19 @@ export const Login = () => {
     <div className={styles.container}>
       <div className={styles.loginContainer}>
         <div className={styles.header}>
-          <h1 className={styles.tittle}>Acesso ao Sistema</h1>
-          <p className={styles.text}>
+          <h1 className="tittle">Acesso ao Sistema</h1>
+          <p className="text">
             Entre com seu CNPJ e senha para acessar o sistema
           </p>
         </div>
         <form className={styles.form}></form>
         <div className={styles.footer}>
-          <NavLink to={"/esqueceu-senha"} className={styles.link}>
+          <NavLink to={"/esqueceu-senha"} className="link">
             Esqueceu sua senha?
           </NavLink>
-          <p className={styles.text}>
+          <p className="text">
             Não tem uma conta?
-            <NavLink to={"/registrar"} className={styles.link}>
+            <NavLink to={"/registrar"} className="link">
               Cadastre-se
             </NavLink>
           </p>

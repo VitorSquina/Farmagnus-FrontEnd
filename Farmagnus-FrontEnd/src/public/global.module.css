@@ -1,0 +1,20 @@
+:global(.link) {
+  text-decoration: none;
+  font-size: 1rem;
+  color: rgb(37 99 235);
+}
+:global(.link:hover) {
+  text-decoration: underline;
+  color: rgb(37 99 235);
+}
+:global(.tittle) {
+  font-size: 1.7rem;
+  color: var(--primary-button-color);
+  font-weight: bold;
+  margin: 1rem;
+}
+:global(.text) {
+  font-weight: 0;
+  color: gray;
+  font-size: 1rem;
+}

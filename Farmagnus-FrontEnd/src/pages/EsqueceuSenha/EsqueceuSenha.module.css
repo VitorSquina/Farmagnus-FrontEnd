@@ -7,50 +7,38 @@
   text-align: center;
   align-items: center;
 }
-.loginContainer {
+.formContainer {
   background-color: var(--secondary-background-color);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   width: 25%;
-  height: 65%;
+  height: 55%;
   border-radius: 2%;
   box-shadow: 1px 1px 20px rgba(150, 149, 149, 0.541);
-  padding: 1rem;
+  padding: 2rem;
+}
+.form {
+  background-color: black;
+  height: 40%;
+  width: 80%;
 }
 @media (max-width: 1600px) {
-  .loginContainer {
+  .formContainer {
     width: 40%;
     height: 70%;
   }
 }
 @media (max-width: 1200px) {
-  .loginContainer {
+  .formContainer {
     width: 70%;
     height: 70%;
   }
 }
 @media (max-width: 900px) {
-  .loginContainer {
+  .formContainer {
     width: 99%;
     height: 97%;
   }
-}
-
-.form {
-  background-color: black;
-  width: 85%;
-  height: 50%;
-}
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  width: 85%;
-}
-
-.footer .text {
-  margin-top: 2rem;
 }
