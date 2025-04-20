@@ -13,7 +13,7 @@ export const Login = () => {
         </div>
         <form className={styles.form}></form>
         <div className={styles.footer}>
-          <NavLink to={"/esqueceu-senha"} className="link">
+          <NavLink to={"/recuperar-senha"} className="link">
             Esqueceu sua senha?
           </NavLink>
           <p className="text">

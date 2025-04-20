@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import styles from "./EsqueceuSenha.module.css";
+import styles from "./RecuperarSenha.module.css";
 
-export const EsqueceuSenha = () => {
+export const RecuperarSenha = () => {
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
