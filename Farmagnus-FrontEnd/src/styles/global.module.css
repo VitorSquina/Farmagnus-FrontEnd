@@ -1,7 +1,7 @@
 :global(.link) {
   text-decoration: none;
   font-size: 1rem;
-  color: rgb(37 99 235);
+  color: var(--quaternary-text-color);
 }
 :global(.link:hover) {
   text-decoration: underline;
@@ -9,12 +9,17 @@
 }
 :global(.tittle) {
   font-size: 1.7rem;
-  color: var(--primary-button-color);
+  color: var(--primary-text-color);
   font-weight: bold;
   margin: 1rem;
 }
 :global(.text) {
   font-weight: 0;
-  color: gray;
+  color: var(--secondary-text-color);
   font-size: 1rem;
+}
+:global(.errorMessage) {
+  color: red;
+  font-size: 0.8rem;
+  margin: 0.2rem;
 }

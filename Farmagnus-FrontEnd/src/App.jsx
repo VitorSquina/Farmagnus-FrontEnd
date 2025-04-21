@@ -1,7 +1,7 @@
 import "./App.css";
-import "./public/colors.module.css";
-import "./public/reset.css";
-import "./public/global.module.css";
+import "./styles/global.module.css";
+import "./styles/colors.module.css";
+import "./styles/reset.css";
 import { Rotas } from "./Routes/Rotas";
 
 function App() {

@@ -8,3 +8,7 @@
   box-shadow: 1px 1px 20px rgba(150, 149, 149, 0.541);
   padding: 2rem;
 }
+.content {
+  margin-top: 1rem;
+  width: 100%;
+}

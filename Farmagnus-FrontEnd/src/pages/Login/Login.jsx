@@ -4,20 +4,18 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 // Components
 import { PopOver } from "../../components/PopOver/PopOver";
+import { MyForm } from "./MyForm/MyForm";
 // CSS
 import styles from "./Login.module.css";
 
 export const Login = () => {
-  const [cnpj, setCnpj] = useState("");
-  const [senha, setSenha] = useState("");
-  const [erro, setErro] = useState("");
   return (
     <div className={styles.container}>
       <PopOver
         title={"Acesso ao Sistema"}
         text={"Entre com seu CNPJ e senha para acessar o sistema"}
       >
-        <form className={styles.form}></form>
+        <MyForm />
         <div className={styles.footer}>
           <NavLink to={"/recuperar-senha"} className="link">
             Esqueceu sua senha?
