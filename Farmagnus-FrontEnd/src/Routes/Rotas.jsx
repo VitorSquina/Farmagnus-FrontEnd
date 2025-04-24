@@ -19,6 +19,11 @@ export const Rotas = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/recuperar-senha" element={<RecuperarSenha />} />
           <Route path="/" element={<Home />} />
+
+          <Route element={<PrivateRoute />}>
+            <Route path="/dashboard" element={<h1>Dashboard</h1>} />
+            <Route path="/historico" element={<h1>Histórico</h1>} />
+          </Route>
         </Routes>
       </AuthProvider>
     </BrowserRouter>
