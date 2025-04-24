@@ -8,6 +8,7 @@ import { RecuperarSenha } from "../pages/RecuperarSenha/RecuperarSenha";
 import { AuthProvider } from "../contexts/AuthProvider";
 // PrivateRoute
 import { PrivateRoute } from "./PrivateRoute";
+import { Home } from "../pages/Home/Home";
 
 export const Rotas = () => {
   return (
@@ -17,6 +18,7 @@ export const Rotas = () => {
           <Route path="/teste" element={<TesteComponentes />} />
           <Route path="/login" element={<Login />} />
           <Route path="/recuperar-senha" element={<RecuperarSenha />} />
+          <Route path="/" element={<Home />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
