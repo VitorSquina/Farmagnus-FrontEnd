@@ -4,11 +4,12 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import { TesteComponentes } from "../pages/TesteComponentes/TesteComponentes";
 import { Login } from "../pages/Login/Login";
 import { RecuperarSenha } from "../pages/RecuperarSenha/RecuperarSenha";
+import { Home } from "../pages/Home/Home";
+import { Registrar } from "../pages/Registrar/Registrar";
 //Context
 import { AuthProvider } from "../contexts/AuthProvider";
 // PrivateRoute
 import { PrivateRoute } from "./PrivateRoute";
-import { Home } from "../pages/Home/Home";
 
 export const Rotas = () => {
   return (
@@ -17,6 +18,7 @@ export const Rotas = () => {
         <Routes>
           <Route path="/teste" element={<TesteComponentes />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/registrar" element={<Registrar />} />
           <Route path="/recuperar-senha" element={<RecuperarSenha />} />
           <Route path="/" element={<Home />} />
 

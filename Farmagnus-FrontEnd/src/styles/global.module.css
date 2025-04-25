@@ -8,15 +8,15 @@
   color: rgb(37 99 235);
 }
 :global(.tittle) {
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   color: var(--primary-text-color);
   font-weight: bold;
-  margin: 1rem;
+  margin-bottom: 1rem;
 }
 :global(.text) {
   font-weight: 0;
   color: var(--secondary-text-color);
-  font-size: 1rem;
+  font-size: 0.9rem;
 }
 :global(.errorMessage) {
   font-size: 0.9rem;
