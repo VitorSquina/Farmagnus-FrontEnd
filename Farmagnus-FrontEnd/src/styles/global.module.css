@@ -19,24 +19,6 @@
   font-size: 1rem;
 }
 :global(.errorMessage) {
-  font-size: 1rem;
-  margin: 0.2rem;
-  z-index: 100;
-  position: absolute;
-  top: 5px;
-  right: 20px;
-
-  min-width: 300px;
-
-  min-height: 80px;
-
-  padding: 1rem;
-  justify-content: left;
-  align-items: top;
-  display: flex;
-
-  border: 1px solid red;
-  border-radius: 15px;
-
-  background-color: rgba(255, 0, 0, 0.473);
+  font-size: 0.9rem;
+  color: var(--error-text-color);
 }

@@ -1,7 +1,6 @@
 import { Field, ErrorMessage } from "formik";
 import styles from "./Input.module.css";
 import { LabelInputs } from "../../Labels/LabelInputs";
-import { Danger } from "../../Alert/Danger/Danger";
 import { useState } from "react";
 
 export const Input = ({
@@ -12,12 +11,6 @@ export const Input = ({
   required,
   ...props
 }) => {
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const handleClose = () => {
-    setErrorMessage("");
-  };
-
   return (
     <div className={styles.container}>
       <LabelInputs label={label || name} required={required} />
@@ -29,7 +22,7 @@ export const Input = ({
         required={required}
         {...props}
       />
-      <ErrorMessage name={name} component={Danger} />
+      <ErrorMessage name={name} component={"div"} className="errorMessage" />
     </div>
   );
 };

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./MyForm.module.css";
 // Components
 import { Input } from "../../../components/Inputs/Input/Input";
-import { Danger } from "../../../components/Alert/Danger/Danger";
+import { CnpjInput } from "../../../components/Inputs/CnpjInput/CnpjInput";
 // Context
 import { useAuth } from "../../../contexts/AuthProvider";
 
@@ -26,20 +26,12 @@ export const MyForm = () => {
         /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/,
         "CNPJ deve estar no formato 00.000.000/0000-00"
       ),
-    senha: Yup.string()
-      .required("Senha é obrigatória")
-      .min(8, "Senha deve ter no mínimo 8 caracteres")
-      .max(20, "Senha deve ter no máximo 20 caracteres")
-      .matches(
-        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
-        "Senha deve conter pelo menos: uma letra maiúscula, uma letra minúscula, um número e um caractere especial;"
-      ),
   });
   const handleSubmit = (values, { setSubmitting }) => {
     try {
       login(values);
     } catch (error) {
-      <Danger>{error.message}</Danger>;
+      console.log(error.message);
     }
 
     setSubmitting(false);
@@ -54,9 +46,22 @@ export const MyForm = () => {
       >
         {({ values, isSubmitting }) => (
           <Form className={styles.form}>
-            <Input name="cnpj" placeholder="00.000.000/0000-00" />
-            <Input name="senha" type={"password"} placeholder="∗∗∗∗∗∗∗∗∗∗" />
-            <button type="submit">submit</button>
+            <CnpjInput
+              name="cnpj"
+              mask="99.999.999/9999-99"
+              placeholder="00.000.000/0000-00"
+              label="CNPJ"
+            />
+
+            <Input
+              name="senha"
+              type={"password"}
+              placeholder="∗∗∗∗∗∗∗∗∗∗"
+              disabled={!values.cnpj}
+            />
+            <button type="submit" disabled={!values.cnpj || !values.senha}>
+              submit
+            </button>
           </Form>
         )}
       </Formik>
