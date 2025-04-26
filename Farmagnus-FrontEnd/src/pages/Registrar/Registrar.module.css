@@ -9,6 +9,14 @@
 
   background-color: var(--primary-background-color);
 }
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
 p {
   text-align: center;
 }

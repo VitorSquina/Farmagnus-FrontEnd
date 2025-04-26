@@ -5,6 +5,7 @@ import { TesteComponentes } from "../pages/TesteComponentes/TesteComponentes";
 import { Login } from "../pages/Login/Login";
 import { RecuperarSenha } from "../pages/RecuperarSenha/RecuperarSenha";
 import { Home } from "../pages/Home/Home";
+import { Endereco } from "../pages/Registrar/Endereco/Endereco";
 import { Registrar } from "../pages/Registrar/Registrar";
 //Context
 import { AuthProvider } from "../contexts/AuthProvider";
@@ -19,6 +20,8 @@ export const Rotas = () => {
           <Route path="/teste" element={<TesteComponentes />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registrar" element={<Registrar />} />
+          <Route path="/registrar/endereco" element={<Endereco />} />
+
           <Route path="/recuperar-senha" element={<RecuperarSenha />} />
           <Route path="/" element={<Home />} />
 

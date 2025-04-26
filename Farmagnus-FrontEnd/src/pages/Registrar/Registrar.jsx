@@ -10,13 +10,15 @@ export const Registrar = () => {
         title="Cadastro de Farmácia"
         text="Preencha os dados abaixo para cadastrar sua farmácia"
       >
-        <MyForm />
-        <p className="text">
-          Já tem uma conta?{" "}
-          <NavLink to="/login" className="link">
-            Faça login
-          </NavLink>
-        </p>
+        <div className={styles.formContainer}>
+          <MyForm />
+          <p className="text">
+            Já tem uma conta?{" "}
+            <NavLink to="/login" className="link">
+              Faça login
+            </NavLink>
+          </p>
+        </div>
       </PopOver>
     </div>
   );

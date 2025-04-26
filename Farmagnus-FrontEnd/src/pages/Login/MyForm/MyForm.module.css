@@ -9,3 +9,11 @@
   display: flex;
   gap: 20px;
 }
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-left: 1%;
+  height: 3rem;
+  width: 99%;
+}

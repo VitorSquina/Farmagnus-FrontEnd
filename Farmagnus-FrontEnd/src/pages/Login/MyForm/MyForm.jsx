@@ -30,11 +30,13 @@ export const MyForm = () => {
   const handleSubmit = (values, { setSubmitting }) => {
     try {
       login(values);
+      console.log(values);
     } catch (error) {
       console.log(error.message);
     }
 
     setSubmitting(false);
+    navigate("/dashboard");
   };
 
   return (
@@ -59,9 +61,16 @@ export const MyForm = () => {
               placeholder="∗∗∗∗∗∗∗∗∗∗"
               disabled={!values.cnpj}
             />
-            <button type="submit" disabled={!values.cnpj || !values.senha}>
-              submit
-            </button>
+            <div className={styles.buttonContainer}>
+              <button
+                type="submit"
+                onSubmit={handleSubmit}
+                disabled={!values.cnpj || !values.senha}
+                className="primaryButton"
+              >
+                Entrar
+              </button>
+            </div>
           </Form>
         )}
       </Formik>

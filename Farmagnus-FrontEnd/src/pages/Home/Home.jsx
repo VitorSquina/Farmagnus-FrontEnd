@@ -10,12 +10,16 @@ export const Home = () => {
         text="Sistema de gerenciamento de pedidos para farmácias e drogarias"
       >
         <div className={styles.content}>
-          <NavLink to="/login" className={styles.button}>
-            acessar
-          </NavLink>
-          <NavLink to="/registrar" className={styles.button}>
-            cadastrar-se
-          </NavLink>
+          <div className={styles.button}>
+            <NavLink to="/login" className="primaryButton">
+              acessar
+            </NavLink>
+          </div>
+          <div className={styles.button}>
+            <NavLink to="/registrar" className="secondaryButton">
+              cadastrar-se
+            </NavLink>
+          </div>
         </div>
       </PopOver>
     </div>

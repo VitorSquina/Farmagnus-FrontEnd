@@ -7,11 +7,14 @@
   text-align: center;
   align-items: center;
 }
-
-.form {
-  background-color: black;
-  height: 40%;
-  width: 80%;
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-left: 1%;
+  margin-bottom: 3%;
+  height: 3rem;
+  width: 99%;
 }
 @media (max-width: 1600px) {
   .formContainer {
