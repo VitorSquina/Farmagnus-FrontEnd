@@ -11,6 +11,7 @@ import { Registrar } from "../pages/Registrar/Registrar";
 import { AuthProvider } from "../contexts/AuthProvider";
 // PrivateRoute
 import { PrivateRoute } from "./PrivateRoute";
+import { Pedidos } from "../pages/Pedidos/Pedidos";
 
 export const Rotas = () => {
   return (
@@ -18,17 +19,16 @@ export const Rotas = () => {
       <AuthProvider>
         <Routes>
           <Route path="/teste" element={<TesteComponentes />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/recuperar-senha" element={<RecuperarSenha />} />
           <Route path="/registrar" element={<Registrar />} />
           <Route path="/registrar/endereco" element={<Endereco />} />
 
-          <Route path="/recuperar-senha" element={<RecuperarSenha />} />
-          <Route path="/" element={<Home />} />
-
-          <Route element={<PrivateRoute />}>
-            <Route path="/dashboard" element={<h1>Dashboard</h1>} />
-            <Route path="/historico" element={<h1>Histórico</h1>} />
-          </Route>
+          <Route
+            path="/pedidos"
+            element={<PrivateRoute element={<Pedidos />} />}
+          />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
