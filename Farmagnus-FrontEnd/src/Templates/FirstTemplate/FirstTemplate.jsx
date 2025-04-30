@@ -5,10 +5,9 @@ export const FirstTemplate = ({ logo, children }) => {
   return (
     <div className={styles.container}>
       <Header logo={logo} />
-      <div className={styles.content}>
-        <NavBar />
-        {children}
-      </div>
+      <div className={styles.content}></div>
+      <NavBar />
+      {children}
     </div>
   );
 };
