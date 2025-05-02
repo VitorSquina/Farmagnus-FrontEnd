@@ -1,4 +1,5 @@
 import { FirstTemplate } from "../../Templates/FirstTemplate/FirstTemplate";
+import { AguardandoPagamento } from "./components/AguardandoPagamento/AguardandoPagamento";
 import styles from "./Pedidos.module.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 
@@ -12,14 +13,39 @@ export const Pedidos = () => {
           </header>
           <Tabs className={styles.tabs}>
             <TabList className={styles.tabList}>
-              <Tab className={styles.tabItem}>Aguardando Pagamento</Tab>
-              <Tab className={styles.tabItem}>Não Faturado</Tab>
-              <Tab className={styles.tabItem}>Retirada na Loja</Tab>
-              <Tab className={styles.tabItem}>Entrega</Tab>
+              <Tab
+                selectedClassName={styles.activeTab}
+                className={styles.tabItem}
+              >
+                Aguardando Pagamento
+              </Tab>
+              <Tab
+                selectedClassName={styles.activeTab}
+                className={styles.tabItem}
+              >
+                Não Faturado
+              </Tab>
+              <Tab
+                selectedClassName={styles.activeTab}
+                className={styles.tabItem}
+              >
+                Retirada na Loja
+              </Tab>
+              <Tab
+                selectedClassName={styles.activeTab}
+                className={styles.tabItem}
+              >
+                Entrega
+              </Tab>
             </TabList>
-
             <TabPanel>
-              <h2>Any content 1</h2>
+              <AguardandoPagamento />
+            </TabPanel>
+            <TabPanel>
+              <AguardandoPagamento />
+            </TabPanel>
+            <TabPanel>
+              <AguardandoPagamento />
             </TabPanel>
             <TabPanel>
               <h2>Any content 2</h2>

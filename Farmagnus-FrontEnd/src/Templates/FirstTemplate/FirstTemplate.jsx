@@ -4,10 +4,13 @@ import styles from "./FirstTemplate.module.css";
 export const FirstTemplate = ({ logo, children }) => {
   return (
     <div className={styles.container}>
-      <Header logo={logo} />
-      <div className={styles.content}></div>
-      <NavBar />
-      {children}
+      <header className={styles.header}>
+        <Header logo={logo} />
+      </header>
+      <div className={styles.content}>
+        <NavBar />
+        <div className={styles.children}>{children}</div>
+      </div>
     </div>
   );
 };
