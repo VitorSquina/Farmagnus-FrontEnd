@@ -2,6 +2,9 @@
   text-decoration: none;
   font-size: 1rem;
   color: var(--quaternary-text-color);
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 :global(.link:hover) {
   text-decoration: underline;

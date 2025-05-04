@@ -1,9 +1,10 @@
-import { NavLink } from "react-router-dom";
 import { Card } from "../../../../components/Card/Card";
-import styles from "./AguardandoPagamento.module.css";
+import styles from "./NaoFaturado.module.css";
 import { ButtonModal } from "../../../../components/ButtonModal/ButtonModal";
 
-export const AguardandoPagamento = ({ data }) => {
+export const NaoFaturado = ({ data }) => {
+  const handleFaturar = () => {};
+
   return (
     <>
       {data.map((i) => (
@@ -14,10 +15,16 @@ export const AguardandoPagamento = ({ data }) => {
                 className="secondaryButton"
                 name={"Ver Detalhes"}
                 data={i}
+                description={true}
               />
             </div>
             <div className={styles.confirmPaymentButtonContainer}>
-              <button className="primaryButton">Confirmar pagamento</button>
+              <ButtonModal
+                name="Faturar"
+                className="primaryButton"
+                onClick={handleFaturar}
+                description={false}
+              />
             </div>
           </div>
         </Card>

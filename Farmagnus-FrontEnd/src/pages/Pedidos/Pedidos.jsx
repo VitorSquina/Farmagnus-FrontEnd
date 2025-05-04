@@ -1,7 +1,35 @@
 import { FirstTemplate } from "../../Templates/FirstTemplate/FirstTemplate";
 import { AguardandoPagamento } from "./components/AguardandoPagamento/AguardandoPagamento";
+import { Entrega } from "./components/Entrega/Entrega";
+import { NaoFaturado } from "./components/NaoFaturado/NaoFaturado";
 import styles from "./Pedidos.module.css";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+const data = [
+  {
+    numPedido: 1003,
+    nomeCliente: "Carlos Pereira",
+    enderecoCliente: "Rua dos Pinheiros",
+    numEndereco: 789,
+    numWhatsapp: "+55499234531",
+    qntdProdutos: 2,
+  },
+  {
+    numPedido: 1004,
+    nomeCliente: "Carlos Pereira",
+    enderecoCliente: "Rua dos Pinheiros",
+    numEndereco: 789,
+    numWhatsapp: "+5549999936862",
+    qntdProdutos: 1,
+  },
+  {
+    numPedido: 1005,
+    nomeCliente: "Carlos Pereira",
+    enderecoCliente: "Rua dos Pinheiros",
+    numEndereco: 789,
+    numWhatsapp: "+5549988412772",
+    qntdProdutos: 2,
+  },
+];
 
 export const Pedidos = () => {
   return (
@@ -38,18 +66,18 @@ export const Pedidos = () => {
                 Entrega
               </Tab>
             </TabList>
-            <TabPanel>
-              <AguardandoPagamento />
-            </TabPanel>
-            <TabPanel>
-              <AguardandoPagamento />
-            </TabPanel>
-            <TabPanel>
-              <AguardandoPagamento />
-            </TabPanel>
-            <TabPanel>
-              <h2>Any content 2</h2>
-            </TabPanel>
+            <div className={styles.tabPanelContainer}>
+              <TabPanel className={styles.tabPanel}>
+                <AguardandoPagamento data={data} />
+              </TabPanel>
+              <TabPanel className={styles.tabPanel}>
+                <NaoFaturado data={data} />
+              </TabPanel>
+              <TabPanel className={styles.tabPanel}></TabPanel>
+              <TabPanel className={styles.tabPanel}>
+                <Entrega data={data} />
+              </TabPanel>
+            </div>
           </Tabs>
         </div>
       </FirstTemplate>
