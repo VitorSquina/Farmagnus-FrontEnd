@@ -36,7 +36,7 @@ export const MyForm = () => {
     }
 
     setSubmitting(false);
-    navigate("/dashboard");
+    navigate("/pedidos");
   };
 
   return (
