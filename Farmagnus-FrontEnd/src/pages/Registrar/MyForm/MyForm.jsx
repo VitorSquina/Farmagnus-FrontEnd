@@ -10,17 +10,17 @@ export const MyForm = () => {
   const navigate = useNavigate();
 
   const initialValues = {
-    nomeEmpresa: "",
-    nomeResponsavel: "",
+    nome_empresa: "",
+    nome_responsavel: "",
     cnpj: "",
     telefone: "",
     email: "",
     senha: "",
-    confirmarSenha: "",
+    confirmar_senha: "",
   };
 
   const validationSchema = Yup.object({
-    nomeEmpresa: Yup.string()
+    nome_empresa: Yup.string()
       .required("Nome da empresa é obrigatório")
       .min(5, "Nome da empresa deve ter pelo menos 3 caracteres")
       .max(16, "Nome da empresa deve ter no máximo 16 caracteres")
@@ -28,7 +28,7 @@ export const MyForm = () => {
         /^[a-zA-Z0-9\s]+$/,
         "Nome da empresa deve conter apenas letras e números"
       ),
-    nomeResponsavel: Yup.string()
+    nome_responsavel: Yup.string()
       .required("Nome do responsável é obrigatório")
       .min(5, "Nome do responsável deve ter pelo menos 3 caracteres")
       .max(16, "Nome do responsável deve ter no máximo 16 caracteres"),
@@ -61,15 +61,19 @@ export const MyForm = () => {
       .matches(/[A-Z]/, "Senha deve conter letras maiúsculas"),
   });
   const handleSubmit = (values, { setSubmitting }) => {
+    const dadosIniciais = {
+      nome_empresa: values.nome_empresa,
+      nome_responsavel: values.nome_responsavel,
+      cnpj: values.cnpj,
+      email: values.email,
+      telefone: values.telefone,
+      senha: values.senha,
+    };
     try {
-      console.log(values);
-      // Aqui você pode adicionar a lógica para enviar os dados para o servidor
+      navigate("/registrar/endereco", { state: dadosIniciais });
     } catch (error) {
       console.log(error.message);
     }
-
-    setSubmitting(false);
-    navigate("/registrar/endereco");
   };
 
   return (
@@ -83,14 +87,14 @@ export const MyForm = () => {
           <Form className={styles.form}>
             <div>
               <Input
-                name="nomeEmpresa"
+                name="nome_empresa"
                 type={"text"}
                 label={"Nome da Empresa"}
                 required={true}
-                placeholder="Ex: Farmagnus Centro"
+                placeholder="Ex: suaEmpresa Centro"
               />
               <Input
-                name="nomeResponsavel"
+                name="nome_responsavel"
                 type={"text"}
                 label={"Nome do Responsável"}
                 required={true}
@@ -116,7 +120,7 @@ export const MyForm = () => {
                 name="email"
                 type={"email"}
                 required={true}
-                placeholder={"farmagnus@email.com"}
+                placeholder={"seu@email.com"}
               />
               <Input
                 name="senha"
@@ -125,7 +129,7 @@ export const MyForm = () => {
                 placeholder={"********"}
               />
               <Input
-                name="confirmarSenha"
+                name="confirmar_senha"
                 type={"password"}
                 required={true}
                 placeholder={"********"}
@@ -138,8 +142,8 @@ export const MyForm = () => {
                 disabled={
                   isSubmitting ||
                   !values.senha ||
-                  !values.confirmarSenha ||
-                  values.senha !== values.confirmarSenha
+                  !values.confirmar_senha ||
+                  values.senha !== values.confirmar_senha
                 }
                 className="primaryButton"
               >
