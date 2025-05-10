@@ -1,8 +1,10 @@
 import { createContext, useState, useContext } from "react";
+import { useUsers } from "../Hooks/useUser/useUser";
 
 const AuthContext = createContext();
-
 export const AuthProvider = ({ children }) => {
+  const { users } = useUsers();
+  console.log(users);
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
 
