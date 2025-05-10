@@ -11,8 +11,10 @@ import { CepInput } from "../../../../components/Inputs/CepInput/CepInput";
 import { useAuth } from "../../../../contexts/AuthProvider";
 // Icons
 import { IoIosCheckmarkCircleOutline } from "react-icons/io";
+import { useUsers } from "../../../../Hooks/useUser/useUser";
 
-export const MyForm = () => {
+export const MyForm = ({ dadosEmpresa }) => {
+  const { createUser, updateUser } = useUsers();
   const navigate = useNavigate();
   const { login } = useAuth();
   const initialValues = {
@@ -33,14 +35,17 @@ export const MyForm = () => {
     complemento: Yup.string(),
   });
   const handleSubmit = (values, { setSubmitting }) => {
-    try {
-      login(values);
-    } catch (error) {
-      console.log(error.message);
-    }
+    setSubmitting(true);
+    const dadosCompletos = { ...dadosEmpresa, ...values };
 
+    try {
+      createUser(dadosCompletos);
+    } catch (error) {
+      console.log("error: " + error.message);
+    } finally {
+      navigate("/login");
+    }
     setSubmitting(false);
-    navigate("/dashboard");
   };
   return (
     <div className={styles.container}>
@@ -111,6 +116,7 @@ export const MyForm = () => {
               </div>
               <div className={styles.buttonContainer}>
                 <button
+                  type="submit"
                   disabled={
                     isSubmitting ||
                     !values.cep ||
