@@ -1,0 +1,36 @@
+.container {
+  background-color: var(--primary-background-color);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-left: 1%;
+  margin-bottom: 3%;
+  height: 3rem;
+  width: 99%;
+}
+@media (max-width: 1600px) {
+  .formContainer {
+    width: 40%;
+    height: 70%;
+  }
+}
+@media (max-width: 1200px) {
+  .formContainer {
+    width: 70%;
+    height: 70%;
+  }
+}
+@media (max-width: 900px) {
+  .formContainer {
+    width: 99%;
+    height: 97%;
+  }
+}

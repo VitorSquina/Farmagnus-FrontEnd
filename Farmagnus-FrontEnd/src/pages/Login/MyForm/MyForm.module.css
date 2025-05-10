@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+}
+.form {
+  width: 100%;
+  margin-bottom: 5%;
+}
+.row {
+  display: flex;
+  gap: 20px;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-left: 1%;
+  height: 3rem;
+  width: 99%;
+}

@@ -1,0 +1,15 @@
+.container {
+  background-color: var(--secondary-background-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 2%;
+  box-shadow: 1px 1px 20px rgba(150, 149, 149, 0.541);
+  padding: 2rem;
+  max-width: 25vw;
+}
+.content {
+  margin-top: 1rem;
+  width: 100%;
+}

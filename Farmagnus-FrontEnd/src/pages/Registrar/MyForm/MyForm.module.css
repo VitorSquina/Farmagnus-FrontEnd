@@ -1,0 +1,17 @@
+.grid {
+  display: grid;
+  grid-template-columns: 47% 47%;
+  column-gap: 6%;
+}
+.container {
+  min-width: 25vw;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.5rem;
+  margin-left: 1%;
+  margin-bottom: 3%;
+  height: 3rem;
+  width: 99%;
+}
