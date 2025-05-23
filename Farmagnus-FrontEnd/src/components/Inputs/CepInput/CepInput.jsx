@@ -1,10 +1,10 @@
-import { useField } from "formik";
-import { ErrorMessage } from "formik";
-import styles from "../Input/Input.module.css";
-import { LabelInputs } from "../../Labels/LabelInputs";
+import { useField } from 'formik';
+import { ErrorMessage } from 'formik';
+import styles from '../Input/Input.module.css';
+import { LabelInputs } from '../../Labels/LabelInputs';
 
 const formatCEP = (value) => {
-  const digits = value.replace(/\D/g, "");
+  const digits = value.replace(/\D/g, '');
   const part1 = digits.slice(0, 5);
   const part2 = digits.slice(5, 8);
   let result = part1;
@@ -13,16 +13,10 @@ const formatCEP = (value) => {
 };
 
 const handleSearch = () => {
-  console.log("Search button clicked");
+  console.log('Search button clicked');
 };
 
-export const CepInput = ({
-  name,
-  label,
-  placeholder = "",
-  required,
-  ...props
-}) => {
+export const CepInput = ({ name, label, placeholder = '', required, ...props }) => {
   const [field, meta, helpers] = useField(name);
 
   const handleChange = (e) => {
@@ -41,11 +35,7 @@ export const CepInput = ({
           onChange={handleChange}
           className={styles.input}
         />
-        <button
-          type={"button"}
-          onClick={handleSearch}
-          className="secondaryButton"
-        >
+        <button type={'button'} onClick={handleSearch} className="secondaryButton">
           <p>Buscar</p>
         </button>
       </div>

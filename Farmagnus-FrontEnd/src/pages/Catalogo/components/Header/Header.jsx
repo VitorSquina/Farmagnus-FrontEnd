@@ -1,5 +1,5 @@
-import styles from "./Header.module.css";
-import { FaPlus } from "react-icons/fa6";
+import styles from './Header.module.css';
+import { FaPlus } from 'react-icons/fa6';
 
 export const Header = () => {
   return (

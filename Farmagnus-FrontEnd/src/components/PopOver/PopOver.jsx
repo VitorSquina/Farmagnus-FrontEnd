@@ -1,4 +1,4 @@
-import styles from "./PopOver.module.css";
+import styles from './PopOver.module.css';
 
 export const PopOver = ({ title, text, children }) => {
   return (

@@ -1,7 +1,7 @@
-import styles from "./Registrar.module.css";
-import { PopOver } from "../../components/PopOver/PopOver";
-import { MyForm } from "./MyForm/MyForm";
-import { NavLink } from "react-router-dom";
+import styles from './Registrar.module.css';
+import { PopOver } from '../../components/PopOver/PopOver';
+import { FormCadastro } from './FormCadastro/FormCadastro';
+import { NavLink } from 'react-router-dom';
 
 export const Registrar = () => {
   return (
@@ -11,9 +11,9 @@ export const Registrar = () => {
         text="Preencha os dados abaixo para cadastrar sua farmácia"
       >
         <div className={styles.formContainer}>
-          <MyForm />
+          <FormCadastro />
           <p className="text">
-            Já tem uma conta?{" "}
+            Já tem uma conta?{' '}
             <NavLink to="/login" className="link">
               Faça login
             </NavLink>

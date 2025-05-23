@@ -1,11 +1,10 @@
-import styles from "./Filter.module.css";
-import { useState } from "react";
-import { isInteger } from "formik";
-import { CiSearch } from "react-icons/ci";
+import styles from './Filter.module.css';
+import { useState } from 'react';
+import { CiSearch } from 'react-icons/ci';
 export const Filter = () => {
   const [visibleLevelFilter, setVisibleLevelFilter] = useState(0);
   const [searchValue, setSearchValue] = useState();
-  const [visibleClass, setVisibleClass] = useState("todos");
+  const [visibleClass, setVisibleClass] = useState('todos');
 
   return (
     <div className={styles.container}>
@@ -23,37 +22,31 @@ export const Filter = () => {
       <div className={styles.buttonContainer}>
         <button
           onClick={() => {
-            setVisibleLevelFilter("todos");
-            setVisibleClass("todos");
+            setVisibleLevelFilter('todos');
+            setVisibleClass('todos');
           }}
-          className={
-            visibleClass == "todos" ? "primaryButton" : "secondaryButton"
-          }
+          className={visibleClass == 'todos' ? 'primaryButton' : 'secondaryButton'}
         >
-          Todos
+          <label>Todos</label>
         </button>
         <div className={styles.catalogoButtonContainer}>
           <button
             onClick={() => {
-              setVisibleLevelFilter("visivel");
-              setVisibleClass("visivel");
+              setVisibleLevelFilter('visivel');
+              setVisibleClass('visivel');
             }}
-            className={
-              visibleClass == "visivel" ? "primaryButton" : "secondaryButton"
-            }
+            className={visibleClass == 'visivel' ? 'primaryButton' : 'secondaryButton'}
           >
-            No Catálogo
+            <label>No Catálogo</label>
           </button>
           <button
             onClick={() => {
-              setVisibleLevelFilter("oculto");
-              setVisibleClass("oculto");
+              setVisibleLevelFilter('oculto');
+              setVisibleClass('oculto');
             }}
-            className={
-              visibleClass == "oculto" ? "primaryButton" : "secondaryButton"
-            }
+            className={visibleClass == 'oculto' ? 'primaryButton' : 'secondaryButton'}
           >
-            Fora do Catálogo
+            <label>Fora do Catálogo</label>
           </button>
         </div>
       </div>
