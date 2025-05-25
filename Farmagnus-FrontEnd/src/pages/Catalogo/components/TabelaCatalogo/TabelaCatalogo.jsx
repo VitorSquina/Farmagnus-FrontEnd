@@ -2,46 +2,12 @@ import styles from './TabelaCatalogo.module.css';
 import { Actions } from './components/Actions/Actions';
 import { LuImage } from 'react-icons/lu';
 import { VisibleLabel } from './components/VisibleLabel/VisibleLabel';
-const data = [
-  {
-    id: 1,
-    image: '',
-    name: 'Dipirona 500mg',
-    lab: 'Medley',
-    gtin: '7891234567890',
-    value: 5.99,
-    visible: true,
-  },
-  {
-    id: 2,
-    image: '',
-    name: 'João',
-    gtin: '7899876543210',
-    lab: 'EMS',
-    value: 3.24,
-    visible: false,
-  },
-  {
-    id: 3,
-    image: '',
-    name: 'João',
-    gtin: '7897654321098',
-    lab: 'Neo Química',
-    value: 3.24,
-    visible: true,
-  },
-  {
-    id: 4,
-    image: '',
-    name: 'João',
-    gtin: '7893216549870',
-    lab: 'Eurofarma',
-    value: 3.24,
-    visible: true,
-  },
-];
+import { useMedicines } from '../../../../Hooks/useMedicines/useMedicines';
 
 export const TabelaCatalogo = () => {
+  const { medicines } = useMedicines();
+
+  console.log(medicines);
   const handleChangeVisibility = (visibilidade) => {
     visibilidade = !visibilidade;
   };
@@ -76,7 +42,7 @@ export const TabelaCatalogo = () => {
         </thead>
 
         <tbody>
-          {data.map((item) => (
+          {medicines.map((item) => (
             <tr className={styles.tableRow} key={item.id} item={item}>
               <td className={styles.rowItems}>
                 {item.image ? (
@@ -85,15 +51,15 @@ export const TabelaCatalogo = () => {
                   <LuImage className={styles.image} />
                 )}
               </td>
-              <td className={styles.rowItems}>{item.name}</td>
-              <td className={styles.rowItems}>{item.lab}</td>
-              <td className={styles.rowItems}>{item.gtin}</td>
-              <td className={styles.rowItems}>{item.value}</td>
+              <td className={styles.rowItems}>{item.nome}</td>
+              <td className={styles.rowItems}>{item.laboratorio}</td>
+              <td className={styles.rowItems}>{item.codigo_de_barras}</td>
+              <td className={styles.rowItems}>{item.preco}</td>
               <td className={styles.rowItems}>
-                <VisibleLabel isVisible={item.visible} />
+                <VisibleLabel isVisible={item.exibit_catalogo} />
               </td>
               <td className={styles.rowItems}>
-                <Actions visibility={item.visible} />
+                <Actions visibility={item.exibit_catalogo} />
               </td>
             </tr>
           ))}
