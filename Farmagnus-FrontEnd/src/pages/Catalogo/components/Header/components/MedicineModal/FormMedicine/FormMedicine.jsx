@@ -4,7 +4,7 @@ import { Input } from '../../../../../../../components/Inputs/Input/Input';
 import styles from './FormMedicine.module.css';
 import { FormikSliderSelect } from '../../../../../../../components/Inputs/FormikSliderSelect/FormikSliderSelect';
 
-export const FormMedicine = ({ buttonName }) => {
+export const FormMedicine = () => {
   return (
     <Formik
       className={styles.container}
@@ -33,28 +33,40 @@ export const FormMedicine = ({ buttonName }) => {
         // imagem: Yup.mixed().required('Imagem é obrigatória'),
       })}
     >
-      <Form className={styles.form}>
-        <div className={styles.inputsContainer}>
-          <Input name="nome" type="text" placeholder="Nome do Medicamento" label="Nome" />
-          <Input
-            name="codigo_de_barras"
-            type="text"
-            placeholder="Código de Barras"
-            label="Código de Barras"
-          />
-          <Input name="preco" type="number" placeholder="Preço (R$)" label="Preço (R$)" />
-          <Input name="laboratorio" type="text" placeholder="Laboratório" label="Laboratório" />
-          <Input name="apresentacao" type="text" placeholder="Apresentação" label="Apresentação" />
-          <Input
-            name="descricao"
-            type="text"
-            placeholder="Descrição do Medicamento"
-            label="Descrição"
-          />
+      <Form>
+        <div className={styles.form}>
+          <div className={styles.inputsContainer}>
+            <Input name="nome" type="text" placeholder="Nome do Medicamento" label="Nome" />
+            <Input
+              name="codigo_de_barras"
+              type="text"
+              placeholder="Código de Barras"
+              label="Código de Barras"
+            />
+            <Input name="preco" type="number" placeholder="Preço (R$)" label="Preço (R$)" />
+            <Input name="laboratorio" type="text" placeholder="Laboratório" label="Laboratório" />
+            <Input
+              name="apresentacao"
+              type="text"
+              placeholder="Apresentação"
+              label="Apresentação"
+            />
+            <Input
+              name="descricao"
+              type="text"
+              placeholder="Descrição do Medicamento"
+              label="Descrição"
+            />
 
-          <FormikSliderSelect name="exibit_catalogo" label="Exibir no Catálogo do App" />
+            <FormikSliderSelect name="exibit_catalogo" label="Exibir no Catálogo do App" />
+            <input type="file" placeholder="Escolher Imagem" />
+          </div>
+          <div className={styles.buttonContainer}>
+            <div className={styles.button}>
+              <button className="primaryButton">Adicionar Medicamento</button>
+            </div>
+          </div>
         </div>
-        <div className={styles.imagemInputContainer}></div>
       </Form>
     </Formik>
   );

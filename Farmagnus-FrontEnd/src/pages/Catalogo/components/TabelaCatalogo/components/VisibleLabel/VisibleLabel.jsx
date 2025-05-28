@@ -1,5 +1,5 @@
 import styles from './VisibleLabel.module.css';
-export const VisibleLabel = ({ isVisible, children }) => {
+export const VisibleLabel = ({ isVisible }) => {
   return (
     <label>
       {isVisible ? (

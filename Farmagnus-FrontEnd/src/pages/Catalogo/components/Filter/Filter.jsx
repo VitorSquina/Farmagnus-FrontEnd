@@ -34,6 +34,7 @@ export const Filter = () => {
             onClick={() => {
               setVisibleLevelFilter('visivel');
               setVisibleClass('visivel');
+              console.log(visibleLevelFilter);
             }}
             className={visibleClass == 'visivel' ? 'primaryButton' : 'secondaryButton'}
           >

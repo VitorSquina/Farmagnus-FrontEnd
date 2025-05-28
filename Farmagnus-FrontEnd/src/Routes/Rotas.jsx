@@ -13,6 +13,7 @@ import { AuthProvider } from '../contexts/Auth/AuthProvider';
 import { PrivateRoute } from './PrivateRoute';
 import { Pedidos } from '../pages/Pedidos/Pedidos';
 import { Catalogo } from '../pages/Catalogo/Catalogo';
+import { Dashboard } from '../pages/Dashboard/Dashboard';
 
 export const Rotas = () => {
   return (
@@ -28,6 +29,7 @@ export const Rotas = () => {
 
           <Route path="/pedidos" element={<PrivateRoute element={<Pedidos />} />} />
           <Route path="/catalogo" element={<PrivateRoute element={<Catalogo />} />} />
+          <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

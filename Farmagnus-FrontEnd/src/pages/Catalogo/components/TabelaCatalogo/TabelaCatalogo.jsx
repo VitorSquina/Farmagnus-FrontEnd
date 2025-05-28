@@ -8,9 +8,6 @@ export const TabelaCatalogo = () => {
   const { medicines } = useMedicines();
 
   console.log(medicines);
-  const handleChangeVisibility = (visibilidade) => {
-    visibilidade = !visibilidade;
-  };
 
   return (
     <div className={styles.tableContainer}>
