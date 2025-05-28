@@ -1,7 +1,7 @@
-import { NavLink } from "react-router-dom";
-import { Card } from "../../../../components/Card/Card";
-import styles from "./AguardandoPagamento.module.css";
-import { ButtonModal } from "../../../../components/ButtonModal/ButtonModal";
+import { NavLink } from 'react-router-dom';
+import { Card } from '../../../../components/Card/Card';
+import styles from './AguardandoPagamento.module.css';
+import { ButtonModal } from '../../../../components/ButtonModal/ButtonModal';
 
 export const AguardandoPagamento = ({ data }) => {
   return (
@@ -10,11 +10,7 @@ export const AguardandoPagamento = ({ data }) => {
         <Card key={i.numPedido} data={i}>
           <div className={styles.orderButtons}>
             <div>
-              <ButtonModal
-                className="secondaryButton"
-                name={"Ver Detalhes"}
-                data={i}
-              />
+              <ButtonModal className="secondaryButton" name={'Ver Detalhes'} data={i} />
             </div>
             <div className={styles.confirmPaymentButtonContainer}>
               <button className="primaryButton">Confirmar pagamento</button>

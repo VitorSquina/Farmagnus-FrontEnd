@@ -1,30 +1,30 @@
 // React
-import * as Yup from "yup";
-import { Form, Formik } from "formik";
-import { useNavigate } from "react-router-dom";
+import * as Yup from 'yup';
+import { Form, Formik } from 'formik';
+import { useNavigate } from 'react-router-dom';
 // Styles
-import styles from "./MyForm.module.css";
+import styles from './FormLogin.module.css';
 // Components
-import { Input } from "../../../components/Inputs/Input/Input";
-import { CnpjInput } from "../../../components/Inputs/CnpjInput/CnpjInput";
+import { Input } from '../../../components/Inputs/Input/Input';
+import { CnpjInput } from '../../../components/Inputs/CnpjInput/CnpjInput';
 // Context
-import { useAuth } from "../../../contexts/AuthProvider";
+import { useAuth } from '../../../contexts/Auth/useAuth';
 
-export const MyForm = () => {
+export const FormLogin = () => {
   const navigate = useNavigate();
   const { login } = useAuth();
   const initialValues = {
-    cnpj: "",
-    senha: "",
+    cnpj: '',
+    senha: '',
   };
   const validationSchema = Yup.object({
     cnpj: Yup.string()
-      .required("CNPJ é obrigatório")
-      .min(18, "CNPJ deve ter 18 dígitos")
-      .max(18, "CNPJ deve ter 18 dígitos")
+      .required('CNPJ é obrigatório')
+      .min(18, 'CNPJ deve ter 18 dígitos')
+      .max(18, 'CNPJ deve ter 18 dígitos')
       .matches(
         /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/,
-        "CNPJ deve estar no formato 00.000.000/0000-00"
+        'CNPJ deve estar no formato 00.000.000/0000-00'
       ),
   });
   const handleSubmit = (values, { setSubmitting }) => {
@@ -36,7 +36,7 @@ export const MyForm = () => {
     }
 
     setSubmitting(false);
-    navigate("/pedidos");
+    navigate('/pedidos');
   };
 
   return (
@@ -46,7 +46,7 @@ export const MyForm = () => {
         initialValues={initialValues}
         validationSchema={validationSchema}
       >
-        {({ values, isSubmitting }) => (
+        {({ values }) => (
           <Form className={styles.form}>
             <CnpjInput
               name="cnpj"
@@ -57,7 +57,7 @@ export const MyForm = () => {
 
             <Input
               name="senha"
-              type={"password"}
+              type={'password'}
               placeholder="∗∗∗∗∗∗∗∗∗∗"
               disabled={!values.cnpj}
             />

@@ -1,14 +1,14 @@
 // Style
-import styles from "./Header.module.css";
+import styles from './Header.module.css';
 // React
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { NavLink } from 'react-router-dom';
+import { useState } from 'react';
 // Context
-import { useAuth } from "../../contexts/AuthProvider";
+import { useAuth } from '../../contexts/Auth/useAuth';
 // React-Icons
-import { IoIosNotificationsOutline } from "react-icons/io";
-import { LuLockKeyhole } from "react-icons/lu";
-import { FiLogOut } from "react-icons/fi";
+import { IoIosNotificationsOutline } from 'react-icons/io';
+import { LuLockKeyhole } from 'react-icons/lu';
+import { FiLogOut } from 'react-icons/fi';
 
 export const Header = ({ logo }) => {
   const { logout } = useAuth();
@@ -39,10 +39,7 @@ export const Header = ({ logo }) => {
             {isOpen && (
               <div className={styles.profileSlider}>
                 <div className={styles.profileSliderContent}>
-                  <NavLink
-                    to="/alterar-senha"
-                    className={styles.changePassword}
-                  >
+                  <NavLink to="/alterar-senha" className={styles.changePassword}>
                     <LuLockKeyhole className={styles.icon} />
                     Alterar Senha
                   </NavLink>

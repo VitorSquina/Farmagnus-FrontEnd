@@ -1,19 +1,19 @@
-import React from "react";
-import styles from "./SendWhatsAppMessage.module.css";
+import React from 'react';
+import styles from './SendWhatsAppMessage.module.css';
 export const SendWhatsAppMessage = ({ data }) => {
-  const nomeEmpresa = "Farmagnus";
+  const nomeEmpresa = 'Farmagnus';
 
   const handleWhatsAppClick = (data) => {
     const message = encodeURIComponent(
-      "Olá " +
+      'Olá ' +
         data.nomeCliente +
-        " represento a " +
+        ' represento a ' +
         nomeEmpresa +
-        ", e estou entrando em contato sobre o pedido #" +
+        ', e estou entrando em contato sobre o pedido #' +
         data.numPedido
     );
     const url = `https://web.whatsapp.com/send?phone=${data}&text=${message}`;
-    window.open(url, "_blank");
+    window.open(url, '_blank');
   };
 
   return (

@@ -1,6 +1,6 @@
-import { GrFormClose } from "react-icons/gr";
-import { SendWhatsAppMessage } from "../../SendWhatsappMessage/SendWhatsAppMessage";
-import styles from "./ModalDescription.module.css";
+import { GrFormClose } from 'react-icons/gr';
+import { SendWhatsAppMessage } from '../../SendWhatsappMessage/SendWhatsAppMessage';
+import styles from './ModalDescription.module.css';
 export const ModalDescription = ({ handleToogleModal, data, children }) => {
   return (
     <div>
@@ -8,16 +8,10 @@ export const ModalDescription = ({ handleToogleModal, data, children }) => {
         {data ? (
           <>
             <header className={styles.closeIconContainer}>
-              <GrFormClose
-                size={30}
-                onClick={handleToogleModal}
-                className={styles.icon}
-              />
+              <GrFormClose size={30} onClick={handleToogleModal} className={styles.icon} />
             </header>
             <main className={styles.description}>
-              <h2 className={styles.title}>
-                Detalhes do Pedido #{`${data.numPedido}`}
-              </h2>
+              <h2 className={styles.title}>Detalhes do Pedido #{`${data.numPedido}`}</h2>
               <h3 className={styles.subtitle}>Informações do cliente</h3>
               <section className={styles.text}>
                 <p className={styles.textRow}>
@@ -43,11 +37,7 @@ export const ModalDescription = ({ handleToogleModal, data, children }) => {
         ) : (
           <>
             <header className={styles.closeIconContainer}>
-              <GrFormClose
-                size={30}
-                onClick={handleToogleModal}
-                className={styles.icon}
-              />
+              <GrFormClose size={30} onClick={handleToogleModal} className={styles.icon} />
             </header>
             {children}
           </>

@@ -1,4 +1,4 @@
-import styles from "./LabelInputs.module.css";
+import styles from './LabelInputs.module.css';
 
 export const LabelInputs = ({ label, required, children }) => {
   return (

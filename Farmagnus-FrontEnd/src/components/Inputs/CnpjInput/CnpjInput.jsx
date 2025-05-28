@@ -1,10 +1,10 @@
-import React from "react";
-import { ErrorMessage, useField } from "formik";
-import styles from "../Input/Input.module.css";
-import { LabelInputs } from "../../Labels/LabelInputs";
+import React from 'react';
+import { ErrorMessage, useField } from 'formik';
+import styles from '../Input/Input.module.css';
+import { LabelInputs } from '../../Labels/LabelInputs';
 
 const formatCNPJ = (value) => {
-  const digits = value.replace(/\D/g, "");
+  const digits = value.replace(/\D/g, '');
   const part1 = digits.slice(0, 2);
   const part2 = digits.slice(2, 5);
   const part3 = digits.slice(5, 8);
@@ -18,13 +18,7 @@ const formatCNPJ = (value) => {
   return result;
 };
 
-export const CnpjInput = ({
-  name,
-  label,
-  placeholder = "",
-  required,
-  ...props
-}) => {
+export const CnpjInput = ({ name, label, placeholder = '', required, ...props }) => {
   const [field, meta, helpers] = useField(name);
 
   const handleChange = (e) => {

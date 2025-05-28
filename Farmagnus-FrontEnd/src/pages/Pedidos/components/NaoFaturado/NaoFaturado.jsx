@@ -1,6 +1,6 @@
-import { Card } from "../../../../components/Card/Card";
-import styles from "./NaoFaturado.module.css";
-import { ButtonModal } from "../../../../components/ButtonModal/ButtonModal";
+import { Card } from '../../../../components/Card/Card';
+import styles from './NaoFaturado.module.css';
+import { ButtonModal } from '../../../../components/ButtonModal/ButtonModal';
 
 export const NaoFaturado = ({ data }) => {
   const handleFaturar = () => {};
@@ -13,7 +13,7 @@ export const NaoFaturado = ({ data }) => {
             <div>
               <ButtonModal
                 className="secondaryButton"
-                name={"Ver Detalhes"}
+                name={'Ver Detalhes'}
                 data={i}
                 description={true}
               />

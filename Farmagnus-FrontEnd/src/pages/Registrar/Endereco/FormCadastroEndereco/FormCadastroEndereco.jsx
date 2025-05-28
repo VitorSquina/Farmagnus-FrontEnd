@@ -1,37 +1,35 @@
 // React
-import * as Yup from "yup";
-import { Form, Formik } from "formik";
-import { NavLink, useNavigate } from "react-router-dom";
+import * as Yup from 'yup';
+import { Form, Formik } from 'formik';
+import { NavLink, useNavigate } from 'react-router-dom';
 // Styles
-import styles from "./MyForm.module.css";
+import styles from './FormCadastroEndereco.module.css';
 // Components
-import { Input } from "../../../../components/Inputs/Input/Input";
-import { CepInput } from "../../../../components/Inputs/CepInput/CepInput";
-// Hooks
-import { useAuth } from "../../../../contexts/AuthProvider";
-// Icons
-import { IoIosCheckmarkCircleOutline } from "react-icons/io";
-import { useUsers } from "../../../../Hooks/useUser/useUser";
+import { Input } from '../../../../components/Inputs/Input/Input';
+import { CepInput } from '../../../../components/Inputs/CepInput/CepInput';
 
-export const MyForm = ({ dadosEmpresa }) => {
-  const { createUser, updateUser } = useUsers();
+// Icons
+import { IoIosCheckmarkCircleOutline } from 'react-icons/io';
+import { useUsers } from '../../../../Hooks/useUser/useUser';
+
+export const FormCadastroEndereco = ({ dadosEmpresa }) => {
+  const { createUser } = useUsers();
   const navigate = useNavigate();
-  const { login } = useAuth();
   const initialValues = {
-    cep: "",
-    estado: "",
-    cidade: "",
-    rua: "",
-    numero: "",
-    complemento: "",
+    cep: '',
+    estado: '',
+    cidade: '',
+    rua: '',
+    numero: '',
+    complemento: '',
   };
   const validationSchema = Yup.object({
-    cep: Yup.string().required("Campo obrigatório"),
+    cep: Yup.string().required('Campo obrigatório'),
 
-    estado: Yup.string().required("Campo obrigatório"),
-    cidade: Yup.string().required("Campo obrigatório"),
-    rua: Yup.string().required("Campo obrigatório"),
-    numero: Yup.string().required("Campo obrigatório"),
+    estado: Yup.string().required('Campo obrigatório'),
+    cidade: Yup.string().required('Campo obrigatório'),
+    rua: Yup.string().required('Campo obrigatório'),
+    numero: Yup.string().required('Campo obrigatório'),
     complemento: Yup.string(),
   });
   const handleSubmit = (values, { setSubmitting }) => {
@@ -41,9 +39,9 @@ export const MyForm = ({ dadosEmpresa }) => {
     try {
       createUser(dadosCompletos);
     } catch (error) {
-      console.log("error: " + error.message);
+      console.log('error: ' + error.message);
     } finally {
-      navigate("/login");
+      navigate('/login');
     }
     setSubmitting(false);
   };
@@ -56,25 +54,20 @@ export const MyForm = ({ dadosEmpresa }) => {
       >
         {({ values, isSubmitting }) => (
           <Form className={styles.form}>
-            <CepInput
-              name="cep"
-              label="Cep"
-              placeholder="Ex: 00000-000"
-              required={true}
-            />
+            <CepInput name="cep" label="Cep" placeholder="Ex: 00000-000" required={true} />
             <div className={styles.grid}>
               <Input
                 name="estado"
-                type={"text"}
-                label={"Estado"}
+                type={'text'}
+                label={'Estado'}
                 required={true}
                 placeholder="Ex: SP"
                 disabled={isSubmitting}
               />
               <Input
                 name="cidade"
-                type={"text"}
-                label={"Cidade"}
+                type={'text'}
+                label={'Cidade'}
                 required={true}
                 placeholder="Ex: São Paulo"
                 disabled={isSubmitting}
@@ -82,8 +75,8 @@ export const MyForm = ({ dadosEmpresa }) => {
             </div>
             <Input
               name="rua"
-              type={"text"}
-              label={"Rua"}
+              type={'text'}
+              label={'Rua'}
               required={true}
               placeholder="Ex: Rua das Flores"
               disabled={isSubmitting}
@@ -91,8 +84,8 @@ export const MyForm = ({ dadosEmpresa }) => {
             <div className={styles.grid}>
               <Input
                 name="numero"
-                type={"text"}
-                label={"Número"}
+                type={'text'}
+                label={'Número'}
                 required={true}
                 placeholder="Ex: 123"
                 disabled={isSubmitting}
@@ -100,8 +93,8 @@ export const MyForm = ({ dadosEmpresa }) => {
 
               <Input
                 name="complemento"
-                type={"text"}
-                label={"Complemento"}
+                type={'text'}
+                label={'Complemento'}
                 required={false}
                 placeholder="Ex: Apto 123"
                 disabled={isSubmitting}

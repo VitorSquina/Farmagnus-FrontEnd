@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./Modal.module.css";
-import { ModalDescription } from "./ModalDescription/ModalDescription";
+import React from 'react';
+import styles from './Modal.module.css';
+import { ModalDescription } from './ModalDescription/ModalDescription';
 
 export const Modal = ({ handleToogleModal, data, children }) => {
   return (
@@ -9,9 +9,7 @@ export const Modal = ({ handleToogleModal, data, children }) => {
         <ModalDescription handleToogleModal={handleToogleModal} data={data} />
       ) : (
         <>
-          <ModalDescription handleToogleModal={handleToogleModal}>
-            {children}
-          </ModalDescription>
+          <ModalDescription handleToogleModal={handleToogleModal}>{children}</ModalDescription>
         </>
       )}
     </div>

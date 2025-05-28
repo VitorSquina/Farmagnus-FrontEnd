@@ -1,10 +1,8 @@
-import React from "react";
-import styles from "./ButtonModal.module.css";
-import { useState } from "react";
-import { Modal } from "../Modal/Modal";
+import { useState } from 'react';
+import { Modal } from '../Modal/Modal';
 
 export const ButtonModal = ({ className, name, data, children }) => {
-  const [isActive, setIsActive] = useState("");
+  const [isActive, setIsActive] = useState('');
   const handleToogleModal = () => {
     setIsActive(!isActive);
   };
