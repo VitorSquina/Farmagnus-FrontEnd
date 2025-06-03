@@ -1,0 +1,24 @@
+.container {
+  justify-content: space-between;
+  height: 47vh;
+  margin-left: 0.8rem;
+}
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  height: 100%;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 5px;
+  padding: 1rem;
+  overflow-y: auto;
+  margin-left: 0.5rem;
+}
+.cardContainer {
+  width: 97.5%;
+}
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}

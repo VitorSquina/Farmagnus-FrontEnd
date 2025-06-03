@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "preview": "vite preview",
     "format": "prettier --write .",
     "lint": "eslint . --ext .js,.jsx",
-    "preview": "vite preview"
+    "lint:fix": "eslint . --ext .js,.jsx --fix"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

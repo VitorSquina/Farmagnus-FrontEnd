@@ -1,4 +1,4 @@
-import { Card } from '../../../../components/Card/Card';
+import { Card } from '../Card/Card';
 import styles from './Entrega.module.css';
 import { ButtonModal } from '../../../../components/ButtonModal/ButtonModal';
 

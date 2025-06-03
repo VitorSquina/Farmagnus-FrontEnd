@@ -1,0 +1,30 @@
+# Força o uso de LF como final de linha em todos os arquivos de texto
+* text=auto eol=lf
+
+# Trata arquivos comuns como texto (normalização de EOL)
+*.js     text
+*.jsx    text
+*.ts     text
+*.tsx    text
+*.css    text
+*.scss   text
+*.html   text
+*.json   text
+*.md     text
+*.yml    text
+*.yaml   text
+*.sh     text
+
+# Trata arquivos binários como binário (sem conversão de EOL)
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.ico    binary
+*.pdf    binary
+*.woff   binary
+*.woff2  binary
+*.ttf    binary
+*.eot    binary
+*.mp4    binary
+*.mov    binary
