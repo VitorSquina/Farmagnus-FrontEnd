@@ -1,8 +1,7 @@
-// npm
-import axios from "axios";
-import { useState, useEffect } from "react";
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 
-const API_URL = "http://127.0.0.1:8080/user";
+const API_URL = 'http://127.0.0.1:8080/user';
 
 export const useUsers = () => {
   const [users, setUsers] = useState();
@@ -37,9 +36,7 @@ export const useUsers = () => {
     setIsLoading(true);
     try {
       const res = await axios.patch(`${API_URL}/${id}`, updates);
-      setUsers((prev) =>
-        prev.map((user) => (user.id === id ? res.data : user))
-      );
+      setUsers((prev) => prev.map((user) => (user.id === id ? res.data : user)));
     } catch (err) {
       setError(err.message);
     } finally {

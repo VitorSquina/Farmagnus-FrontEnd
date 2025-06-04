@@ -1,0 +1,43 @@
+.content {
+  margin: auto 0;
+  background-color: var(--secondary-background-color);
+  min-width: 30vw;
+  min-height: 50vh;
+  z-index: 100;
+  border-radius: 10px;
+  padding: 0.5rem;
+  transition: 1s;
+}
+.closeIconContainer {
+  display: flex;
+  width: 100%;
+  justify-content: right;
+}
+.title {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin: 0rem 0rem 2rem 0rem;
+}
+.subtitle {
+  font-size: 1.1rem;
+  margin: 1rem 0;
+  font-weight: 500;
+}
+.description {
+  margin: 0rem 1rem;
+}
+.text {
+  margin-bottom: 1rem;
+}
+.textRow {
+  display: flex;
+  justify-content: left;
+  margin: 0.5rem 0rem;
+}
+.icon {
+  cursor: pointer;
+}
+.icon:hover {
+  background-color: rgba(128, 128, 128, 0.411);
+  border-radius: 3px;
+}

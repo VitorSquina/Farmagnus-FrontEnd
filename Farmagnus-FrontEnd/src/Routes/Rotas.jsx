@@ -1,16 +1,19 @@
 // React
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from 'react-router-dom';
 // Pages
-import { TesteComponentes } from "../pages/TesteComponentes/TesteComponentes";
-import { Login } from "../pages/Login/Login";
-import { RecuperarSenha } from "../pages/RecuperarSenha/RecuperarSenha";
-import { Home } from "../pages/Home/Home";
-import { Endereco } from "../pages/Registrar/Endereco/Endereco";
-import { Registrar } from "../pages/Registrar/Registrar";
+import { TesteComponentes } from '../pages/TesteComponentes/TesteComponentes';
+import { Login } from '../pages/Login/Login';
+import { RecuperarSenha } from '../pages/RecuperarSenha/RecuperarSenha';
+import { Home } from '../pages/Home/Home';
+import { Endereco } from '../pages/Registrar/Endereco/Endereco';
+import { Registrar } from '../pages/Registrar/Registrar';
 //Context
-import { AuthProvider } from "../contexts/AuthProvider";
+import { AuthProvider } from '../contexts/Auth/AuthProvider';
 // PrivateRoute
-import { PrivateRoute } from "./PrivateRoute";
+import { PrivateRoute } from './PrivateRoute';
+import { Pedidos } from '../pages/Pedidos/Pedidos';
+import { Catalogo } from '../pages/Catalogo/Catalogo';
+import { Dashboard } from '../pages/Dashboard/Dashboard';
 
 export const Rotas = () => {
   return (
@@ -18,17 +21,15 @@ export const Rotas = () => {
       <AuthProvider>
         <Routes>
           <Route path="/teste" element={<TesteComponentes />} />
+          <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/recuperar-senha" element={<RecuperarSenha />} />
           <Route path="/registrar" element={<Registrar />} />
           <Route path="/registrar/endereco" element={<Endereco />} />
 
-          <Route path="/recuperar-senha" element={<RecuperarSenha />} />
-          <Route path="/" element={<Home />} />
-
-          <Route element={<PrivateRoute />}>
-            <Route path="/dashboard" element={<h1>Dashboard</h1>} />
-            <Route path="/historico" element={<h1>Histórico</h1>} />
-          </Route>
+          <Route path="/pedidos" element={<PrivateRoute element={<Pedidos />} />} />
+          <Route path="/catalogo" element={<PrivateRoute element={<Catalogo />} />} />
+          <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>

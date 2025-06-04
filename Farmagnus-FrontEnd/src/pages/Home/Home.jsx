@@ -1,6 +1,6 @@
-import { NavLink } from "react-router-dom";
-import { PopOver } from "../../components/PopOver/PopOver";
-import styles from "./Home.module.css";
+import { NavLink } from 'react-router-dom';
+import { PopOver } from '../../components/PopOver/PopOver';
+import styles from './Home.module.css';
 
 export const Home = () => {
   return (

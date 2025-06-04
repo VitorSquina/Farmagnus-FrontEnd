@@ -1,0 +1,63 @@
+.tableContainer {
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--primary-border-color);
+  font-size: 0.9rem;
+}
+.table {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.tableHeaderRow {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 10% 15% 10% 15% 15% 15% 20%;
+  padding: 1rem 0.5rem;
+  margin-left: 0.8rem;
+}
+.listTitleContainer {
+  color: var(--secondary-text-color);
+  justify-content: left;
+  display: flex;
+  width: 100%;
+}
+.listTitle {
+  color: var(--secondary-text-color);
+  justify-content: left;
+  display: flex;
+}
+.listTitlePrice {
+  color: var(--secondary-text-color);
+  justify-content: left;
+  display: flex;
+}
+
+.listTitleActions {
+  color: var(--secondary-text-color);
+  display: flex;
+  justify-content: right;
+  width: 100%;
+}
+.tableRow {
+  display: grid;
+  grid-template-columns: 10% 15% 10% 15% 15% 15% 20%;
+
+  flex-direction: row;
+  justify-content: left;
+  border-top: 1px solid var(--primary-border-color);
+}
+.rowItems {
+  display: flex;
+  width: 100%;
+  justify-content: left;
+  align-items: center;
+  margin-left: 1rem;
+}
+.image {
+  background-color: rgba(214, 212, 212, 0.415);
+  padding: 0.7rem;
+  margin: 0.6rem 0rem;
+  border-radius: 5px;
+}
