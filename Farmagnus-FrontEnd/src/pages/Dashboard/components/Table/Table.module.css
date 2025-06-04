@@ -1,0 +1,23 @@
+.container {
+  justify-content: space-between;
+  margin-left: 0.6rem;
+}
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  height: 100%;
+  border: 1px solid var(--primary-border-color);
+  border-radius: 5px;
+  padding: 1rem;
+  margin-left: 0.5rem;
+}
+.cardContainer {
+  width: 97.5%;
+  height: 100%;
+}
+.title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem 0;
+}
