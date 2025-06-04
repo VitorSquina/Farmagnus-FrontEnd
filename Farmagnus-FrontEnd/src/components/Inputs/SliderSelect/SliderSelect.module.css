@@ -17,7 +17,7 @@
 
 .slider {
   position: relative;
-  width: 42px;
+  width: 32%;
   height: 24px;
   background-color: #e3e3e6;
   border-radius: 999px;
@@ -28,8 +28,8 @@
 .slider::before {
   content: '';
   position: absolute;
-  height: 18px;
-  width: 18px;
+  height: 75%;
+  width: 44%;
   left: 3px;
   top: 3px;
   background-color: #fff;
@@ -38,11 +38,11 @@
 }
 
 input:checked + .slider::before {
-  transform: translateX(18px);
+  transform: translateX(90%);
 }
 
 input:checked + .slider {
-  background-color: #1a1a1a; /* Mantido igual ao switch desligado */
+  background-color: #1a1a1a;
 }
 
 .labelText {
