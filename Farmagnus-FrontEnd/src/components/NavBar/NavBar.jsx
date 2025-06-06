@@ -10,7 +10,7 @@ import { useAuth } from '../../contexts/Auth/useAuth';
 import { LuLayoutDashboard } from 'react-icons/lu';
 import { BsBoxSeam } from 'react-icons/bs';
 import { FiSmartphone } from 'react-icons/fi';
-import { LuTruck } from 'react-icons/lu';
+import { FaRegClock } from 'react-icons/fa6';
 import { PiClockCounterClockwiseBold } from 'react-icons/pi';
 import { FiLogOut } from 'react-icons/fi';
 
@@ -33,8 +33,8 @@ export const NavBar = () => {
           <p>Catálogo</p>
         </NavLink>
         <NavLink className={styles.navItem} to={'/entregas'}>
-          <LuTruck size={20} />
-          <p>Entregas</p>
+          <FaRegClock size={20} />
+          <p>Horários</p>
         </NavLink>
         <NavLink className={styles.navItem} to={'/historico'}>
           <PiClockCounterClockwiseBold size={20} />
