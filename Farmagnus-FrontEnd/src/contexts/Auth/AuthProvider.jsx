@@ -6,7 +6,6 @@ import axios from 'axios';
 
 export const AuthProvider = ({ children }) => {
   const { users } = useUsers();
-  console.log(users);
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const navigate = useNavigate();
@@ -22,8 +21,7 @@ export const AuthProvider = ({ children }) => {
       console.log('Login successful:', res.data);
       setUser(res.data);
     } catch (error) {
-      console.error('Login failed:', error);
-      throw new Error('Login failed');
+      alert('CNPJ ou senha inválidos. Tente novamente.');
     } finally {
       setIsAuthenticated(true);
     }
