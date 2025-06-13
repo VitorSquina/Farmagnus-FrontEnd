@@ -32,7 +32,7 @@ export const NavBar = () => {
           <FiSmartphone size={20} />
           <p>Catálogo</p>
         </NavLink>
-        <NavLink className={styles.navItem} to={'/entregas'}>
+        <NavLink className={styles.navItem} to={'/horarios'}>
           <FaRegClock size={20} />
           <p>Horários</p>
         </NavLink>
