@@ -22,7 +22,11 @@ export const useMedicines = () => {
   const createMedicine = async (medicineData) => {
     setIsLoading(true);
     try {
-      const res = await axios.post(API_URL, medicineData);
+      const res = await axios.post(API_URL, medicineData, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
       setMedicines((prev) => [...prev, res.medicineData]);
     } catch (err) {
       setError(err.message);
@@ -39,5 +43,6 @@ export const useMedicines = () => {
     isLoading,
     error,
     createMedicine,
+    fetchMedicines,
   };
 };
