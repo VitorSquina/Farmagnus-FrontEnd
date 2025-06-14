@@ -26,3 +26,6 @@
 .fileButton {
   display: none;
 }
+.button {
+  margin-right: 2rem;
+}

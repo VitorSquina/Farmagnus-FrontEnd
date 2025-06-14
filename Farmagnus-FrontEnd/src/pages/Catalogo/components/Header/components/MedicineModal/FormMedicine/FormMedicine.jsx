@@ -2,10 +2,9 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { Input } from '../../../../../../../components/Inputs/Input/Input';
 import styles from './FormMedicine.module.css';
-import { FormikSliderSelect } from '../../../../../../../components/Inputs/FormikSliderSelect/FormikSliderSelect';
 import { useMedicines } from '../../../../../../../Hooks/useMedicines/useMedicines';
-export const FormMedicine = () => {
-  const { createMedicine, fetchMedicines } = useMedicines();
+export const FormMedicine = ({ buttonName, type, id }) => {
+  const { createMedicine, fetchMedicines, editMedicine } = useMedicines();
   return (
     <Formik
       className={styles.container}
@@ -21,11 +20,12 @@ export const FormMedicine = () => {
       }}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values);
-        try {
+        if (type === 'edit') {
+          editMedicine(id, values);
+        } else {
           createMedicine(values);
-        } catch (error) {
-          console.error('Erro ao criar medicamento:', error);
         }
+        fetchMedicines();
         setSubmitting(false);
         location.reload();
       }}
@@ -34,7 +34,7 @@ export const FormMedicine = () => {
         laboratorio: Yup.string().required('Laboratório é obrigatório'),
         codigoDeBarras: Yup.string().required('Código de barras é obrigatório'),
         apresentacao: Yup.string().required('Apresentação é obrigatória'),
-        descricao: Yup.string().required('Descrição é obrigatória'),
+        // descricao: Yup.string().required('Descrição é obrigatória'),
         exibirCatalogo: Yup.boolean(),
         preco: Yup.number().typeError('Preço deve ser um número').required('Preço é obrigatório'),
         // imagem: Yup.mixed().required('Imagem é obrigatória'),
@@ -65,7 +65,7 @@ export const FormMedicine = () => {
               label="Descrição"
             />
 
-            <FormikSliderSelect name="exibit_catalogo" label="Exibir no Catálogo do App" />
+            {/* <FormikSliderSelect name="exibit_catalogo" label="Exibir no Catálogo do App" /> */}
             <div className={styles.fileInputContainer}>
               <input
                 id="imgInput"
@@ -81,7 +81,7 @@ export const FormMedicine = () => {
           <div className={styles.buttonContainer}>
             <div className={styles.button}>
               <button className="primaryButton" type="submit">
-                Adicionar Medicamento
+                {buttonName}
               </button>
             </div>
           </div>

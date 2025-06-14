@@ -1,7 +1,14 @@
 .actionButton {
   border: none;
   background-color: transparent;
-  margin: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+}
+.actionButton:hover {
+  cursor: pointer;
+  background-color: rgb(202, 202, 202);
 }
 .actionsContainer {
   display: flex;
