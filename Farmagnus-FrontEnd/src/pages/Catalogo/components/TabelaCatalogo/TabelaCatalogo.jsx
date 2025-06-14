@@ -9,13 +9,6 @@ export const TabelaCatalogo = () => {
 
   console.log(medicines);
 
-  if (!medicines || medicines.length === 0) {
-    return (
-      <div className={styles.emptyState}>
-        <p className={styles.emptyMessage}>Nenhum medicamento encontrado!</p>
-      </div>
-    );
-  }
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>

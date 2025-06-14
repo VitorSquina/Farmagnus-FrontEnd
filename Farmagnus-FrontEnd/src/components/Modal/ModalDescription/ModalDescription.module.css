@@ -20,7 +20,8 @@
 }
 .subtitle {
   font-size: 1.1rem;
-  font-weight: 600;
+  margin: 1rem 0;
+  font-weight: 500;
 }
 .description {
   margin: 0rem 1rem;
@@ -31,10 +32,7 @@
 .textRow {
   display: flex;
   justify-content: left;
-  margin: 1rem 0rem;
-}
-.textBold {
-  font-weight: 500;
+  margin: 0.5rem 0rem;
 }
 .icon {
   cursor: pointer;
@@ -42,14 +40,4 @@
 .icon:hover {
   background-color: rgba(128, 128, 128, 0.411);
   border-radius: 3px;
-}
-.status {
-  background-color: #fef9c3;
-  color: #854d0e;
-  font-size: 0.7rem;
-  font-weight: 500;
-  padding: 0.1rem 0.3rem;
-  margin-left: 0.5rem;
-  border: 2px solid #e7dfd4;
-  border-radius: 20px;
 }

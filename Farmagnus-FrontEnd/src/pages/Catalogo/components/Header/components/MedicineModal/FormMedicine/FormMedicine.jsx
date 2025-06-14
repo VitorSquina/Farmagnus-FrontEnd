@@ -59,17 +59,7 @@ export const FormMedicine = () => {
             />
 
             <FormikSliderSelect name="exibit_catalogo" label="Exibir no Catálogo do App" />
-            <div className={styles.fileInputContainer}>
-              <input
-                id="imgInput"
-                type="file"
-                placeholder="Escolher Imagem"
-                className={styles.fileButton}
-              />
-              <label htmlFor="imgInput" className="secondaryButton">
-                Clique para adicionar uma imagem
-              </label>
-            </div>
+            <input type="file" placeholder="Escolher Imagem" />
           </div>
           <div className={styles.buttonContainer}>
             <div className={styles.button}>

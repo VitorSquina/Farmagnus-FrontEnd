@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { Card } from '../Card/Card';
+import { Card } from '../../../../components/Card/Card';
 import styles from './AguardandoPagamento.module.css';
 import { ButtonModal } from '../../../../components/ButtonModal/ButtonModal';
 
