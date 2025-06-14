@@ -7,13 +7,8 @@ import { useMedicines } from '../../../../Hooks/useMedicines/useMedicines';
 export const TabelaCatalogo = () => {
   const { medicines } = useMedicines();
 
-  if (!medicines || medicines.length === 0) {
-    return (
-      <div className={styles.emptyState}>
-        <p className={styles.emptyMessage}>Nenhum medicamento encontrado!</p>
-      </div>
-    );
-  }
+  console.log(medicines);
+
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
@@ -43,7 +38,7 @@ export const TabelaCatalogo = () => {
           </tr>
         </thead>
 
-        <tbody className={styles.tableBody}>
+        <tbody>
           {medicines.map((item) => (
             <tr className={styles.tableRow} key={item.id} item={item}>
               <td className={styles.rowItems}>
@@ -55,13 +50,13 @@ export const TabelaCatalogo = () => {
               </td>
               <td className={styles.rowItems}>{item.nome}</td>
               <td className={styles.rowItems}>{item.laboratorio}</td>
-              <td className={styles.rowItems}>{item.codigoDeBarras}</td>
+              <td className={styles.rowItems}>{item.codigo_de_barras}</td>
               <td className={styles.rowItems}>{item.preco}</td>
               <td className={styles.rowItems}>
-                <VisibleLabel isVisible={item.exibirCatalogo} />
+                <VisibleLabel isVisible={item.exibit_catalogo} />
               </td>
               <td className={styles.rowItems}>
-                <Actions visibility={item.exibirCatalogo} id={item.id} values={item} />
+                <Actions visibility={item.exibit_catalogo} />
               </td>
             </tr>
           ))}

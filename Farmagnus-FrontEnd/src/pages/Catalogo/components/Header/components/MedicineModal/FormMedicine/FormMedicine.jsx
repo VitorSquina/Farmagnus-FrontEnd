@@ -2,40 +2,33 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { Input } from '../../../../../../../components/Inputs/Input/Input';
 import styles from './FormMedicine.module.css';
-import { useMedicines } from '../../../../../../../Hooks/useMedicines/useMedicines';
-export const FormMedicine = ({ buttonName, type, id }) => {
-  const { createMedicine, fetchMedicines, editMedicine } = useMedicines();
+import { FormikSliderSelect } from '../../../../../../../components/Inputs/FormikSliderSelect/FormikSliderSelect';
+
+export const FormMedicine = () => {
   return (
     <Formik
       className={styles.container}
       initialValues={{
         nome: '',
         laboratorio: '',
-        codigoDeBarras: '',
+        codigo_de_barras: '',
         apresentacao: '',
         descricao: '',
-        exibirCatalogo: '',
+        exibit_catalogo: '',
         preco: '',
         imagem: '',
       }}
       onSubmit={(values, { setSubmitting }) => {
         console.log(values);
-        if (type === 'edit') {
-          editMedicine(id, values);
-        } else {
-          createMedicine(values);
-        }
-        fetchMedicines();
         setSubmitting(false);
-        location.reload();
       }}
       validationSchema={Yup.object({
         nome: Yup.string().required('Nome é obrigatório'),
         laboratorio: Yup.string().required('Laboratório é obrigatório'),
-        codigoDeBarras: Yup.string().required('Código de barras é obrigatório'),
+        codigo_de_barras: Yup.string().required('Código de barras é obrigatório'),
         apresentacao: Yup.string().required('Apresentação é obrigatória'),
-        // descricao: Yup.string().required('Descrição é obrigatória'),
-        exibirCatalogo: Yup.boolean(),
+        descricao: Yup.string().required('Descrição é obrigatória'),
+        exibit_catalogo: Yup.boolean(),
         preco: Yup.number().typeError('Preço deve ser um número').required('Preço é obrigatório'),
         // imagem: Yup.mixed().required('Imagem é obrigatória'),
       })}
@@ -45,7 +38,7 @@ export const FormMedicine = ({ buttonName, type, id }) => {
           <div className={styles.inputsContainer}>
             <Input name="nome" type="text" placeholder="Nome do Medicamento" label="Nome" />
             <Input
-              name="codigoDeBarras"
+              name="codigo_de_barras"
               type="text"
               placeholder="Código de Barras"
               label="Código de Barras"
@@ -65,24 +58,12 @@ export const FormMedicine = ({ buttonName, type, id }) => {
               label="Descrição"
             />
 
-            {/* <FormikSliderSelect name="exibit_catalogo" label="Exibir no Catálogo do App" /> */}
-            <div className={styles.fileInputContainer}>
-              <input
-                id="imgInput"
-                type="file"
-                placeholder="Escolher Imagem"
-                className={styles.fileButton}
-              />
-              <label htmlFor="imgInput" className="secondaryButton">
-                Clique para adicionar uma imagem
-              </label>
-            </div>
+            <FormikSliderSelect name="exibit_catalogo" label="Exibir no Catálogo do App" />
+            <input type="file" placeholder="Escolher Imagem" />
           </div>
           <div className={styles.buttonContainer}>
             <div className={styles.button}>
-              <button className="primaryButton" type="submit">
-                {buttonName}
-              </button>
+              <button className="primaryButton">Adicionar Medicamento</button>
             </div>
           </div>
         </div>
