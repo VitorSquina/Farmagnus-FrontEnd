@@ -15,7 +15,7 @@ export const FormLogin = () => {
   const { login } = useAuth();
   const initialValues = {
     cnpj: '',
-    senha: '',
+    password: '',
   };
   const validationSchema = Yup.object({
     cnpj: Yup.string()
@@ -30,13 +30,11 @@ export const FormLogin = () => {
   const handleSubmit = (values, { setSubmitting }) => {
     try {
       login(values);
-      console.log(values);
     } catch (error) {
       console.log(error.message);
     }
 
     setSubmitting(false);
-    navigate('/pedidos');
   };
 
   return (
@@ -56,7 +54,7 @@ export const FormLogin = () => {
             />
 
             <Input
-              name="senha"
+              name="password"
               type={'password'}
               placeholder="∗∗∗∗∗∗∗∗∗∗"
               disabled={!values.cnpj}
@@ -65,7 +63,7 @@ export const FormLogin = () => {
               <button
                 type="submit"
                 onSubmit={handleSubmit}
-                disabled={!values.cnpj || !values.senha}
+                disabled={!values.cnpj || !values.password}
                 className="primaryButton"
               >
                 Entrar

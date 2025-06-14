@@ -25,7 +25,6 @@ export const FormCadastroEndereco = ({ dadosEmpresa }) => {
   };
   const validationSchema = Yup.object({
     cep: Yup.string().required('Campo obrigatório'),
-
     estado: Yup.string().required('Campo obrigatório'),
     cidade: Yup.string().required('Campo obrigatório'),
     rua: Yup.string().required('Campo obrigatório'),
@@ -34,8 +33,8 @@ export const FormCadastroEndereco = ({ dadosEmpresa }) => {
   });
   const handleSubmit = (values, { setSubmitting }) => {
     setSubmitting(true);
-    const dadosCompletos = { ...dadosEmpresa, ...values };
-
+    const dadosCompletos = { ...dadosEmpresa, ...values, role: 'admin' };
+    console.log('dadosCompletos: ', dadosCompletos);
     try {
       createUser(dadosCompletos);
     } catch (error) {

@@ -15,21 +15,24 @@ export const ModalDescription = ({ handleToogleModal, data, children }) => {
               <h3 className={styles.subtitle}>Informações do cliente</h3>
               <section className={styles.text}>
                 <p className={styles.textRow}>
-                  <b>Nome: </b>
+                  <b className={styles.textBold}>Nome: </b>
                   {data.nomeCliente}
                 </p>
                 <p className={styles.textRow}>
-                  <b>Endereço: </b>
+                  <b className={styles.textBold}>Endereço: </b>
                   {data.enderecoCliente}, {data.numEndereco}
                 </p>
-                <p>
+                <p className={styles.textBold}>
                   <SendWhatsAppMessage data={data} />
                 </p>
               </section>
               <h3 className={styles.subtitle}>Produtos</h3>
               <section className={styles.text}></section>
               <section>
-                <h4>Status</h4>
+                <h4 className={styles.textBold}>
+                  Status:
+                  <label className={styles.status}>Aguardando Pagamento</label>
+                </h4>
               </section>
               <footer></footer>
             </main>

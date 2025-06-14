@@ -10,24 +10,24 @@ export const FormCadastro = () => {
   const navigate = useNavigate();
 
   const initialValues = {
-    nome_empresa: '',
-    nome_responsavel: '',
+    nomeEmpresa: '',
+    nomeResponsavel: '',
     cnpj: '',
     telefone: '',
     email: '',
     senha: '',
-    confirmar_senha: '',
+    confirmarSenha: '',
   };
 
   const validationSchema = Yup.object({
-    nome_empresa: Yup.string()
+    nomeEmpresa: Yup.string()
       .required('Nome da empresa é obrigatório')
-      .min(5, 'Nome da empresa deve ter pelo menos 3 caracteres')
+      .min(5, 'Nome da empresa deve ter pelo menos 5 caracteres')
       .max(16, 'Nome da empresa deve ter no máximo 16 caracteres')
       .matches(/^[a-zA-Z0-9\s]+$/, 'Nome da empresa deve conter apenas letras e números'),
-    nome_responsavel: Yup.string()
+    nomeResponsavel: Yup.string()
       .required('Nome do responsável é obrigatório')
-      .min(5, 'Nome do responsável deve ter pelo menos 3 caracteres')
+      .min(5, 'Nome do responsável deve ter pelo menos 5 caracteres')
       .max(16, 'Nome do responsável deve ter no máximo 16 caracteres'),
 
     cnpj: Yup.string()
@@ -53,8 +53,8 @@ export const FormCadastro = () => {
   });
   const handleSubmit = (values) => {
     const dadosIniciais = {
-      nome_empresa: values.nome_empresa,
-      nome_responsavel: values.nome_responsavel,
+      nomeEmpresa: values.nomeEmpresa,
+      nomeResponsavel: values.nomeResponsavel,
       cnpj: values.cnpj,
       email: values.email,
       telefone: values.telefone,
@@ -78,14 +78,14 @@ export const FormCadastro = () => {
           <Form className={styles.form}>
             <div>
               <Input
-                name="nome_empresa"
+                name="nomeEmpresa"
                 type={'text'}
                 label={'Nome da Empresa'}
                 required={true}
                 placeholder="Ex: suaEmpresa Centro"
               />
               <Input
-                name="nome_responsavel"
+                name="nomeResponsavel"
                 type={'text'}
                 label={'Nome do Responsável'}
                 required={true}
@@ -106,7 +106,7 @@ export const FormCadastro = () => {
               <Input name="email" type={'email'} required={true} placeholder={'seu@email.com'} />
               <Input name="senha" type={'password'} required={true} placeholder={'********'} />
               <Input
-                name="confirmar_senha"
+                name="confirmarSenha"
                 type={'password'}
                 required={true}
                 placeholder={'********'}
@@ -119,8 +119,8 @@ export const FormCadastro = () => {
                 disabled={
                   isSubmitting ||
                   !values.senha ||
-                  !values.confirmar_senha ||
-                  values.senha !== values.confirmar_senha
+                  !values.confirmarSenha ||
+                  values.senha !== values.confirmarSenha
                 }
                 className="primaryButton"
               >
