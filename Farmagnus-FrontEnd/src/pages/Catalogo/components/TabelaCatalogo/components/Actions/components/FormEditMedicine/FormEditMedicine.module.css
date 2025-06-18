@@ -1,0 +1,51 @@
+.inputsContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 47% 47%;
+  gap: 1rem;
+  height: 90%;
+  justify-content: left;
+}
+.buttonContainer {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: end;
+  margin-top: 2rem;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 65vh;
+}
+.fileInputContainer {
+  height: 75%;
+  width: 87%;
+  background-color: #f5f5f5;
+}
+.fileButton {
+  display: none;
+}
+.button {
+  margin-right: 2rem;
+}
+.card {
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 5% 30%;
+  padding: 2rem;
+}
+.actionButton {
+  border: none;
+  background-color: transparent;
+  padding: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+}
+.actionButton:hover {
+  cursor: pointer;
+  background-color: rgb(202, 202, 202);
+}

@@ -2,11 +2,8 @@ import styles from './TabelaCatalogo.module.css';
 import { Actions } from './components/Actions/Actions';
 import { LuImage } from 'react-icons/lu';
 import { VisibleLabel } from './components/VisibleLabel/VisibleLabel';
-import { useMedicines } from '../../../../Hooks/useMedicines/useMedicines';
 
-export const TabelaCatalogo = () => {
-  const { medicines } = useMedicines();
-
+export const TabelaCatalogo = ({ medicines }) => {
   if (!medicines || medicines.length === 0) {
     return (
       <div className={styles.emptyState}>
@@ -61,7 +58,7 @@ export const TabelaCatalogo = () => {
                 <VisibleLabel isVisible={item.exibirCatalogo} />
               </td>
               <td className={styles.rowItems}>
-                <Actions visibility={item.exibirCatalogo} id={item.id} values={item} />
+                <Actions visibility={item.exibirCatalogo} id={item.id} values={item} data={item} />
               </td>
             </tr>
           ))}

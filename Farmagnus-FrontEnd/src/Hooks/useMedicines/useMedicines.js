@@ -14,11 +14,27 @@ export const useMedicines = () => {
       const res = await axios.get(API_URL);
       setMedicines(res.data);
     } catch (err) {
-      setError(err?.response?.data?.message || err.message || 'Erro ao buscar medicamentos');
+      setError(err.message || 'Erro ao buscar medicamentos');
     } finally {
       setIsLoading(false);
     }
   };
+
+  /**
+  const getMedicineById = async (id) => {
+    try {
+      const res = await axios.get(`${API_URL}/${id}`, {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    } catch (err) {
+      setError(err.message || 'Erro ao buscar medicamentos');
+    } finally {
+      await fetchMedicines();
+    }
+  };
+  **/
 
   const createMedicine = async (medicineData) => {
     setIsLoading(true);
@@ -28,11 +44,11 @@ export const useMedicines = () => {
           'Content-Type': 'application/json',
         },
       });
-      setMedicines((prev) => [...prev, res.data]);
     } catch (err) {
-      setError(err?.response?.data?.message || err.message || 'Erro ao criar medicamento');
+      setError(err.message || 'Erro ao criar medicamento');
     } finally {
       setIsLoading(false);
+      await fetchMedicines();
     }
   };
 
@@ -40,11 +56,11 @@ export const useMedicines = () => {
     setIsLoading(true);
     try {
       await axios.delete(`${API_URL}/${id}`);
-      setMedicines((prev) => prev.filter((medicine) => medicine.id !== id));
     } catch (err) {
-      setError(err?.response?.data?.message || err.message || 'Erro ao excluir medicamento');
+      setError(err.message || 'Erro ao excluir medicamento');
     } finally {
       setIsLoading(false);
+      await fetchMedicines();
     }
   };
 
@@ -56,11 +72,11 @@ export const useMedicines = () => {
           'Content-Type': 'application/json',
         },
       });
-      setMedicines((prev) => prev.map((medicine) => (medicine.id === id ? res.data : medicine)));
     } catch (err) {
-      setError(err?.response?.data?.message || err.message || 'Erro ao editar medicamento');
+      setError(err.message || 'Erro ao editar medicamento');
     } finally {
       setIsLoading(false);
+      await fetchMedicines();
     }
   };
   const changeVisibility = async (id, exibir) => {
@@ -71,52 +87,37 @@ export const useMedicines = () => {
           'Content-Type': 'application/json',
         },
       });
-      setMedicines((prev) => prev.map((medicine) => (medicine.id === id ? res.data : medicine)));
     } catch (err) {
-      setError(
-        err?.response?.data?.message || err.message || 'Erro ao alterar visibilidade do medicamento'
-      );
+      setError(err.message || 'Erro ao alterar visibilidade do medicamento');
+    } finally {
+      setIsLoading(false);
+      await fetchMedicines();
+    }
+  };
+  const searchMedicines = async (value) => {
+    setIsLoading(true);
+    try {
+      const res = await axios.get(`${API_URL}/filter?filtro=${value}`);
+      return res.data;
+    } catch (err) {
+      setError(err.message || 'Erro ao pesquisar por medicamentos');
+      return [];
     } finally {
       setIsLoading(false);
     }
   };
 
   useEffect(() => {
-    let isMounted = true;
-
-    const loadMedicines = async () => {
-      setIsLoading(true);
-      try {
-        const res = await axios.get(API_URL);
-        if (isMounted) {
-          setMedicines(res.data);
-        }
-      } catch (err) {
-        if (isMounted) {
-          setError(err?.response?.data?.message || err.message);
-        }
-      } finally {
-        if (isMounted) {
-          setIsLoading(false);
-        }
-      }
-    };
-
-    loadMedicines();
-
-    return () => {
-      isMounted = false;
-    };
+    fetchMedicines();
   }, []);
 
   return {
     medicines,
-    isLoading,
-    error,
     fetchMedicines,
     createMedicine,
     editMedicine,
     deleteMedicine,
     changeVisibility,
+    searchMedicines,
   };
 };
