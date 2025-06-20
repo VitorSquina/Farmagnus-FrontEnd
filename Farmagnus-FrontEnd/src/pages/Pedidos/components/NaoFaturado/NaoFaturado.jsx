@@ -1,4 +1,4 @@
-import { Card } from '../Card/Card';
+import { Card } from '../../../../components/Card/Card';
 import styles from './NaoFaturado.module.css';
 import { ButtonModal } from '../../../../components/ButtonModal/ButtonModal';
 

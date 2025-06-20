@@ -1,12 +1,12 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-const API_URL = 'http://localhost:8080/medicamento';
+const API_URL = 'http://127.0.0.1:8080/medicamento';
 
 export const useMedicines = () => {
   const [medicines, setMedicines] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState();
 
   const fetchMedicines = async () => {
     setIsLoading(true);
@@ -14,12 +14,15 @@ export const useMedicines = () => {
       const res = await axios.get(API_URL);
       setMedicines(res.data);
     } catch (err) {
+
       setError(err.message || 'Erro ao buscar medicamentos');
       console.error('Error fetching medicines:', error);
+
     } finally {
       setIsLoading(false);
     }
   };
+
 
   /**
   const getMedicineById = async (id) => {
@@ -108,6 +111,7 @@ export const useMedicines = () => {
       setError(err.message || 'Erro ao pesquisar por medicamentos');
       console.error('Error searching medicines:', error);
       return [];
+
     } finally {
       setIsLoading(false);
     }
@@ -116,7 +120,6 @@ export const useMedicines = () => {
   useEffect(() => {
     fetchMedicines();
   }, []);
-
   return {
     medicines,
     fetchMedicines,

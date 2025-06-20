@@ -23,7 +23,7 @@ export const Actions = ({ visibility, id, values, data }) => {
   return (
     <div className={styles.actionsContainer}>
       <button onClick={handleChangeVisibility} className={styles.actionButton}>
-        {values.catalogo ? <FaRegEyeSlash size={iconSize} /> : <FaRegEye size={iconSize} />}
+        {visibility ? <FaRegEyeSlash size={iconSize} /> : <FaRegEye size={iconSize} />}
       </button>
       <ShowDescription data={data} />
       <FormEditMedicine id={id} data={data} />

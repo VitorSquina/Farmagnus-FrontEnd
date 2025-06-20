@@ -11,6 +11,7 @@ export const TabelaCatalogo = ({ medicines }) => {
       </div>
     );
   }
+
   return (
     <div className={styles.tableContainer}>
       <table className={styles.table}>
@@ -40,7 +41,7 @@ export const TabelaCatalogo = ({ medicines }) => {
           </tr>
         </thead>
 
-        <tbody className={styles.tableBody}>
+        <tbody>
           {medicines.map((item) => (
             <tr className={styles.tableRow} key={item.id} item={item}>
               <td className={styles.rowItems}>
@@ -52,10 +53,10 @@ export const TabelaCatalogo = ({ medicines }) => {
               </td>
               <td className={styles.rowItems}>{item.nome}</td>
               <td className={styles.rowItems}>{item.laboratorio}</td>
-              <td className={styles.rowItems}>{item.codigoDeBarras}</td>
+              <td className={styles.rowItems}>{item.codigo_de_barras}</td>
               <td className={styles.rowItems}>{item.preco}</td>
               <td className={styles.rowItems}>
-                <VisibleLabel isVisible={item.exibirCatalogo} />
+                <VisibleLabel isVisible={item.exibit_catalogo} />
               </td>
               <td className={styles.rowItems}>
                 <Actions visibility={item.exibirCatalogo} id={item.id} values={item} data={item} />
