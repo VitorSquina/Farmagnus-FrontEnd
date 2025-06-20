@@ -4,6 +4,9 @@
   border-radius: 5px;
   border: 1px solid var(--primary-border-color);
   font-size: 0.9rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: 0.5;
 }
 .table {
   width: 100%;
@@ -60,20 +63,4 @@
   padding: 0.7rem;
   margin: 0.6rem 0rem;
   border-radius: 5px;
-}
-
-.emptyState {
-  background-image: url('../../../../assets/images/sad.png');
-  background-repeat: no-repeat;
-  background-position: 50% 30%;
-  background-size: 4rem;
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  height: 65%;
-}
-.emptyMessage {
-  font-size: 3rem;
-  font-weight: 600;
-  color: black;
 }

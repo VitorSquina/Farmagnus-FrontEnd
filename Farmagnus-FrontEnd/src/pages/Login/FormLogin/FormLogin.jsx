@@ -1,7 +1,7 @@
 // React
 import * as Yup from 'yup';
 import { Form, Formik } from 'formik';
-import { useNavigate } from 'react-router-dom';
+//import { useNavigate } from 'react-router-dom';
 // Styles
 import styles from './FormLogin.module.css';
 // Components
@@ -11,7 +11,7 @@ import { CnpjInput } from '../../../components/Inputs/CnpjInput/CnpjInput';
 import { useAuth } from '../../../contexts/Auth/useAuth';
 
 export const FormLogin = () => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { login } = useAuth();
   const initialValues = {
     cnpj: '',

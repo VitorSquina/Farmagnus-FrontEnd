@@ -2,9 +2,9 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { Input } from '../../../../../../../components/Inputs/Input/Input';
 import styles from './FormMedicine.module.css';
-import { FormikSliderSelect } from '../../../../../../../components/Inputs/FormikSliderSelect/FormikSliderSelect';
-
-export const FormMedicine = () => {
+import { useMedicinesContext } from '../../../../../../../contexts/medicines/MedicinesContext';
+export const FormMedicine = ({ buttonName, type, id }) => {
+  const { createMedicine, fetchMedicines, editMedicine } = useMedicinesContext();
   return (
     <Formik
       className={styles.container}
@@ -59,17 +59,7 @@ export const FormMedicine = () => {
             />
 
             <FormikSliderSelect name="exibit_catalogo" label="Exibir no Catálogo do App" />
-            <div className={styles.fileInputContainer}>
-              <input
-                id="imgInput"
-                type="file"
-                placeholder="Escolher Imagem"
-                className={styles.fileButton}
-              />
-              <label htmlFor="imgInput" className="secondaryButton">
-                Clique para adicionar uma imagem
-              </label>
-            </div>
+            <input type="file" placeholder="Escolher Imagem" />
           </div>
           <div className={styles.buttonContainer}>
             <div className={styles.button}>

@@ -1,11 +1,23 @@
 import styles from './Actions.module.css';
-import { FaRegEye, FaRegEyeSlash, FaRegEdit } from 'react-icons/fa';
-import { LuSearch } from 'react-icons/lu';
+
+import { FaRegEye, FaRegEyeSlash } from 'react-icons/fa';
+
 import { FiTrash } from 'react-icons/fi';
+
+import { useMedicinesContext } from '../../../../../../contexts/medicines/MedicinesContext';
+
+import { FormEditMedicine } from './components/FormEditMedicine/FormEditMedicine';
+import { ShowDescription } from './components/ShowDescription/ShowDescription';
+
 const iconSize = 17;
-export const Actions = ({ visibility }) => {
+export const Actions = ({ visibility, id, values, data }) => {
+  const { deleteMedicine, changeVisibility } = useMedicinesContext();
+
   const handleChangeVisibility = () => {
-    visibility = !visibility;
+    changeVisibility(id, !visibility);
+  };
+  const handleDelete = (id) => () => {
+    deleteMedicine(id);
   };
 
   return (
@@ -13,13 +25,9 @@ export const Actions = ({ visibility }) => {
       <button onClick={handleChangeVisibility} className={styles.actionButton}>
         {visibility ? <FaRegEyeSlash size={iconSize} /> : <FaRegEye size={iconSize} />}
       </button>
-      <button className={styles.actionButton}>
-        <LuSearch size={iconSize} />
-      </button>
-      <button className={styles.actionButton}>
-        <FaRegEdit size={iconSize} />
-      </button>
-      <button className={styles.actionButton}>
+      <ShowDescription data={data} />
+      <FormEditMedicine id={id} data={data} />
+      <button className={styles.actionButton} onClick={handleDelete(id)}>
         <FiTrash size={iconSize} />
       </button>
     </div>

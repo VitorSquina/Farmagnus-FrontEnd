@@ -1,11 +1,13 @@
 import styles from './Filter.module.css';
-import { useState } from 'react';
 import { CiSearch } from 'react-icons/ci';
-export const Filter = () => {
-  const [visibleLevelFilter, setVisibleLevelFilter] = useState(0);
-  const [searchValue, setSearchValue] = useState();
-  const [visibleClass, setVisibleClass] = useState('todos');
-
+export const Filter = ({
+  visibleLevelFilter,
+  visibleClass,
+  setSearchValue,
+  searchValue,
+  setVisibleClass,
+  setVisibleLevelFilter,
+}) => {
   return (
     <div className={styles.container}>
       <div className={styles.searchContainer}>
