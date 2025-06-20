@@ -4,6 +4,9 @@
   border-radius: 5px;
   border: 1px solid var(--primary-border-color);
   font-size: 0.9rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: 0.5;
 }
 .table {
   width: 100%;

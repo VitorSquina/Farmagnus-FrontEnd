@@ -1,0 +1,87 @@
+.iconClose {
+  border: none;
+  background-color: transparent;
+  padding: 0.1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+}
+.iconClose:hover {
+  cursor: pointer;
+  background-color: #cacaca;
+}
+.actionButton {
+  border: none;
+  background-color: transparent;
+  padding: 0.1rem;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  color: var(--primary-text-color);
+}
+.actionButton:hover {
+  cursor: pointer;
+  background-color: #cacaca;
+}
+.card {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 5% 37%;
+  padding: 2rem;
+  background-color: #f1f1f1;
+  min-height: 50%;
+}
+.imageContainer {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  border-radius: 10px;
+  width: 100%;
+  background-color: #f3f3f3;
+}
+.image {
+  padding: 0.7rem;
+  border-radius: 5px;
+  width: 50%;
+}
+.iconContainer {
+  background-color: #e4e3e3;
+  width: 60%;
+  display: flex;
+  justify-content: center;
+}
+.icon {
+  height: 10rem;
+}
+.header {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  display: flex;
+  margin-top: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-text-color);
+  margin-top: 1.3rem;
+}
+.text {
+  margin-left: 0.5rem;
+  text-align: left;
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-top: 0.5rem;
+}
+.subgrid {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 4rem;
+  margin-bottom: 1rem;
+}

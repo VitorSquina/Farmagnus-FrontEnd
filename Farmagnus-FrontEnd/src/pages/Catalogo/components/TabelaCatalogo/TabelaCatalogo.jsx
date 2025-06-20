@@ -2,12 +2,15 @@ import styles from './TabelaCatalogo.module.css';
 import { Actions } from './components/Actions/Actions';
 import { LuImage } from 'react-icons/lu';
 import { VisibleLabel } from './components/VisibleLabel/VisibleLabel';
-import { useMedicines } from '../../../../Hooks/useMedicines/useMedicines';
 
-export const TabelaCatalogo = () => {
-  const { medicines } = useMedicines();
-
-  console.log(medicines);
+export const TabelaCatalogo = ({ medicines }) => {
+  if (!medicines || medicines.length === 0) {
+    return (
+      <div className={styles.emptyState}>
+        <p className={styles.emptyMessage}>Nenhum medicamento encontrado!</p>
+      </div>
+    );
+  }
 
   return (
     <div className={styles.tableContainer}>
@@ -56,7 +59,7 @@ export const TabelaCatalogo = () => {
                 <VisibleLabel isVisible={item.exibit_catalogo} />
               </td>
               <td className={styles.rowItems}>
-                <Actions visibility={item.exibit_catalogo} />
+                <Actions visibility={item.exibirCatalogo} id={item.id} values={item} data={item} />
               </td>
             </tr>
           ))}

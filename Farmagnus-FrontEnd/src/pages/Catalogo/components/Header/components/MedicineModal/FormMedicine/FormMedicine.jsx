@@ -2,9 +2,9 @@ import { Form, Formik } from 'formik';
 import * as Yup from 'yup';
 import { Input } from '../../../../../../../components/Inputs/Input/Input';
 import styles from './FormMedicine.module.css';
-import { FormikSliderSelect } from '../../../../../../../components/Inputs/FormikSliderSelect/FormikSliderSelect';
-
-export const FormMedicine = () => {
+import { useMedicinesContext } from '../../../../../../../contexts/medicines/MedicinesContext';
+export const FormMedicine = ({ buttonName, type, id }) => {
+  const { createMedicine, fetchMedicines, editMedicine } = useMedicinesContext();
   return (
     <Formik
       className={styles.container}
