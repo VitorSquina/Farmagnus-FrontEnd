@@ -8,9 +8,14 @@
 }
 .buttonContainer {
   display: flex;
-  flex-direction: column-reverse;
-  align-items: end;
+  justify-content: end;
   margin-top: 2rem;
+}
+.button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
 }
 .form {
   display: flex;
@@ -26,15 +31,14 @@
 .fileButton {
   display: none;
 }
-.button {
-  margin-right: 2rem;
-}
+
 .card {
   max-width: 100%;
   max-height: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin: 5% 30%;
+  margin: 5% 34%;
   padding: 2rem;
 }
 .actionButton {
@@ -48,4 +52,31 @@
 .actionButton:hover {
   cursor: pointer;
   background-color: rgb(202, 202, 202);
+}
+.icon {
+  cursor: pointer;
+}
+.icon:hover {
+  background-color: rgba(128, 128, 128, 0.411);
+  border-radius: 3px;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  margin-left: 0.3rem;
+}
+.title {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--primary-text-color);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.description {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--secondary-text-color);
+  font-weight: 400;
 }

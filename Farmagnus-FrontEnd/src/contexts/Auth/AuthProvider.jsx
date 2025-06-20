@@ -1,11 +1,9 @@
 import { useState } from 'react';
-import { useUsers } from '../../Hooks/useUser/useUser';
 import { AuthContext } from './AuthContext';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 export const AuthProvider = ({ children }) => {
-  const { users } = useUsers();
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const navigate = useNavigate();
@@ -21,7 +19,8 @@ export const AuthProvider = ({ children }) => {
       console.log('Login successful:', res.data);
       setUser(res.data);
     } catch (error) {
-      alert('CNPJ ou senha inválidos. Tente novamente.');
+      alert('CNPJ ou senha inválidos. Tente novamente.' + error.message);
+      console.error('Login error:', error);
     } finally {
       setIsAuthenticated(true);
     }

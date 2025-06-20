@@ -14,11 +14,23 @@ export const Catalogo = () => {
   const { medicines, searchMedicines } = useMedicinesContext();
 
   useEffect(() => {
-    if (searchValue) {
-      setCatalogo(searchMedicines(searchValue));
-    } else {
-      setCatalogo(medicines);
-    }
+    const filtrar = async () => {
+      if (searchValue) {
+        const resultados = await searchMedicines(searchValue);
+        setCatalogo(resultados);
+        visibleLevelFilter === 'visivel' &&
+          setCatalogo(resultados.filter((item) => item.exibirCatalogo === true));
+        visibleLevelFilter === 'oculto' &&
+          setCatalogo(resultados.filter((item) => item.exibirCatalogo === false));
+      } else {
+        setCatalogo(medicines);
+        visibleLevelFilter === 'visivel' &&
+          setCatalogo(medicines.filter((item) => item.exibirCatalogo === true));
+        visibleLevelFilter === 'oculto' &&
+          setCatalogo(medicines.filter((item) => item.exibirCatalogo === false));
+      }
+    };
+    filtrar();
   }, [searchValue, medicines, visibleLevelFilter]);
   return (
     <FirstTemplate>

@@ -15,6 +15,7 @@ export const useMedicines = () => {
       setMedicines(res.data);
     } catch (err) {
       setError(err.message || 'Erro ao buscar medicamentos');
+      console.error('Error fetching medicines:', error);
     } finally {
       setIsLoading(false);
     }
@@ -39,13 +40,14 @@ export const useMedicines = () => {
   const createMedicine = async (medicineData) => {
     setIsLoading(true);
     try {
-      const res = await axios.post(API_URL, medicineData, {
+      await axios.post(API_URL, medicineData, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
     } catch (err) {
       setError(err.message || 'Erro ao criar medicamento');
+      console.error('Error creating medicine:', error);
     } finally {
       setIsLoading(false);
       await fetchMedicines();
@@ -58,6 +60,7 @@ export const useMedicines = () => {
       await axios.delete(`${API_URL}/${id}`);
     } catch (err) {
       setError(err.message || 'Erro ao excluir medicamento');
+      console.error('Error deleting medicine:', error);
     } finally {
       setIsLoading(false);
       await fetchMedicines();
@@ -67,13 +70,14 @@ export const useMedicines = () => {
   const editMedicine = async (id, medicineData) => {
     setIsLoading(true);
     try {
-      const res = await axios.put(`${API_URL}/${id}`, medicineData, {
+      await axios.put(`${API_URL}/${id}`, medicineData, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
     } catch (err) {
       setError(err.message || 'Erro ao editar medicamento');
+      console.error('Error editing medicine:', error);
     } finally {
       setIsLoading(false);
       await fetchMedicines();
@@ -82,13 +86,14 @@ export const useMedicines = () => {
   const changeVisibility = async (id, exibir) => {
     setIsLoading(true);
     try {
-      const res = await axios.patch(`${API_URL}/${id}/catalogo?exibir=${exibir}`, null, {
+      await axios.patch(`${API_URL}/${id}/catalogo?exibir=${exibir}`, null, {
         headers: {
           'Content-Type': 'application/json',
         },
       });
     } catch (err) {
       setError(err.message || 'Erro ao alterar visibilidade do medicamento');
+      console.error('Error changing visibility:', error);
     } finally {
       setIsLoading(false);
       await fetchMedicines();
@@ -101,6 +106,7 @@ export const useMedicines = () => {
       return res.data;
     } catch (err) {
       setError(err.message || 'Erro ao pesquisar por medicamentos');
+      console.error('Error searching medicines:', error);
       return [];
     } finally {
       setIsLoading(false);

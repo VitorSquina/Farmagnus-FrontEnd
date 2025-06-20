@@ -4,6 +4,8 @@ import * as Yup from 'yup';
 import { Input } from '../../../../../../../../components/Inputs/Input/Input';
 import styles from './FormEditMedicine.module.css';
 
+import { GrFormClose } from 'react-icons/gr';
+
 import Modal from '@mui/material/Modal';
 import { FaRegEdit } from 'react-icons/fa';
 import { useMedicinesContext } from '../../../../../../../../contexts/medicines/MedicinesContext';
@@ -12,7 +14,7 @@ import { useState } from 'react';
 import { Card } from '@mui/material';
 
 export const FormEditMedicine = ({ id, data }) => {
-  const { createMedicine, fetchMedicines, deleteMedicine } = useMedicinesContext();
+  const { fetchMedicines, editMedicine } = useMedicinesContext();
   const iconSize = 17;
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -24,6 +26,15 @@ export const FormEditMedicine = ({ id, data }) => {
       </button>
       <Modal open={open} onClose={handleClose}>
         <Card className={styles.card}>
+          <header className={styles.header}>
+            <div>
+              <h2 className={styles.title}>Editar Medicamento</h2>
+              <h3 className={styles.description}>Edite as informações do medicamento abaixo.</h3>
+            </div>
+            <div>
+              <GrFormClose size={30} onClick={handleClose} className={styles.icon} />
+            </div>
+          </header>
           <Formik
             className={styles.container}
             initialValues={{
@@ -37,10 +48,10 @@ export const FormEditMedicine = ({ id, data }) => {
               imagem: '',
             }}
             onSubmit={(values) => {
-              deleteMedicine(id);
-              createMedicine(values);
+              editMedicine(id, values);
 
               fetchMedicines();
+              handleClose();
             }}
             validationSchema={Yup.object({
               nome: Yup.string().required('Nome é obrigatório'),
@@ -99,8 +110,11 @@ export const FormEditMedicine = ({ id, data }) => {
                 </div>
                 <div className={styles.buttonContainer}>
                   <div className={styles.button}>
+                    <button className="secondaryButton" onClick={handleClose}>
+                      Cancelar
+                    </button>
                     <button className="primaryButton" type="submit">
-                      Editar Medicamento
+                      Salvar
                     </button>
                   </div>
                 </div>
