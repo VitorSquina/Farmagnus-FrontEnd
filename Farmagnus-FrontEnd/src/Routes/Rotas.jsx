@@ -15,6 +15,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { Pedidos } from '../pages/Pedidos/Pedidos';
 import { Catalogo } from '../pages/Catalogo/Catalogo';
 import { Dashboard } from '../pages/Dashboard/Dashboard';
+import { Historico } from '../pages/Historico/Historico';
 
 export const Rotas = () => {
   return (
@@ -32,6 +33,7 @@ export const Rotas = () => {
             <Route path="/pedidos" element={<PrivateRoute element={<Pedidos />} />} />
             <Route path="/catalogo" element={<PrivateRoute element={<Catalogo />} />} />
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
+            <Route path="/historico" element={<PrivateRoute element={<Historico />} />} />
           </Routes>
         </AuthProvider>
       </MedicinesProvider>

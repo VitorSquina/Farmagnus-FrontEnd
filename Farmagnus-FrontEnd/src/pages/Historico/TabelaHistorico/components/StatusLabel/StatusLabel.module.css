@@ -1,0 +1,21 @@
+.concluido {
+  background-color: #22c55e;
+  padding: 0.3rem;
+  border-radius: 100px;
+  color: white;
+  font-weight: 500;
+}
+.cancelado {
+  background-color: #ef4444;
+  padding: 0.3rem;
+  border-radius: 100px;
+  color: white;
+  font-weight: 500;
+}
+.pendente {
+  background-color: #fdee6b;
+  padding: 0.3rem;
+  border-radius: 100px;
+  color: white;
+  font-weight: 500;
+}

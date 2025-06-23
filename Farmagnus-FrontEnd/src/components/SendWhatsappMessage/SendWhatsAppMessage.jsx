@@ -1,6 +1,7 @@
-import React from 'react';
 import styles from './SendWhatsAppMessage.module.css';
-export const SendWhatsAppMessage = ({ data }) => {
+import { FaWhatsapp } from 'react-icons/fa';
+
+export const SendWhatsAppMessage = ({ data, icon }) => {
   const nomeEmpresa = 'Farmagnus';
 
   const handleWhatsAppClick = (data) => {
@@ -15,7 +16,12 @@ export const SendWhatsAppMessage = ({ data }) => {
     const url = `https://web.whatsapp.com/send?phone=${data}&text=${message}`;
     window.open(url, '_blank');
   };
-
+  if (icon)
+    return (
+      <button className={styles.button} onClick={() => handleWhatsAppClick(data.numWhatsapp)}>
+        <FaWhatsapp className={styles.icon} />
+      </button>
+    );
   return (
     <p className={styles.textOrderDescription}>
       Whatsapp:
