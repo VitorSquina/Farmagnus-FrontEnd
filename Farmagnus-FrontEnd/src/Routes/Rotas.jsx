@@ -1,7 +1,6 @@
 // React
 import { Route, Routes, BrowserRouter } from 'react-router-dom';
 // Pages
-import { TesteComponentes } from '../pages/TesteComponentes/TesteComponentes';
 import { Login } from '../pages/Login/Login';
 import { RecuperarSenha } from '../pages/RecuperarSenha/RecuperarSenha';
 import { Home } from '../pages/Home/Home';
@@ -23,7 +22,6 @@ export const Rotas = () => {
       <MedicinesProvider>
         <AuthProvider>
           <Routes>
-            <Route path="/teste" element={<TesteComponentes />} />
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/recuperar-senha" element={<RecuperarSenha />} />
