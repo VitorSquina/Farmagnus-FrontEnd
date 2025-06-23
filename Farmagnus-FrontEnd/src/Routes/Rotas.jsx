@@ -15,6 +15,7 @@ import { Pedidos } from '../pages/Pedidos/Pedidos';
 import { Catalogo } from '../pages/Catalogo/Catalogo';
 import { Dashboard } from '../pages/Dashboard/Dashboard';
 import { Historico } from '../pages/Historico/Historico';
+import { Horarios } from '../pages/Horarios/Horarios';
 
 export const Rotas = () => {
   return (
@@ -27,11 +28,13 @@ export const Rotas = () => {
             <Route path="/recuperar-senha" element={<RecuperarSenha />} />
             <Route path="/registrar" element={<Registrar />} />
             <Route path="/registrar/endereco" element={<Endereco />} />
+            <Route path="*" element={<Home />} />
 
             <Route path="/pedidos" element={<PrivateRoute element={<Pedidos />} />} />
             <Route path="/catalogo" element={<PrivateRoute element={<Catalogo />} />} />
             <Route path="/dashboard" element={<PrivateRoute element={<Dashboard />} />} />
             <Route path="/historico" element={<PrivateRoute element={<Historico />} />} />
+            <Route path="/horarios" element={<PrivateRoute element={<Horarios />} />} />
           </Routes>
         </AuthProvider>
       </MedicinesProvider>
