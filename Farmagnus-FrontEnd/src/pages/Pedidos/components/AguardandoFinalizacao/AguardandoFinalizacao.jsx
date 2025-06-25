@@ -1,18 +1,18 @@
 import { Card } from '../Card/Card';
-import styles from './Entrega.module.css';
+import styles from './AguardandoFinalizacao.module.css';
 import { ButtonModal } from '../../../../components/ButtonModal/ButtonModal';
 
-export const Entrega = ({ data }) => {
+export const AguardandoFinalizacao = ({ data }) => {
   return (
     <>
       {data.map((i) => (
         <Card key={i.numPedido} data={i}>
           <div className={styles.orderButtons}>
             <div>
-              <ButtonModal name={'Ver Detalhes'} data={i} />
+              <ButtonModal name={'Ver Detalhes'} data={i} className="secondaryButton" />
             </div>
             <div className={styles.confirmPaymentButtonContainer}>
-              <button className="primaryButton">ConfirmarPagamento</button>
+              <button className="primaryButton">Finalizar</button>
             </div>
           </div>
         </Card>
