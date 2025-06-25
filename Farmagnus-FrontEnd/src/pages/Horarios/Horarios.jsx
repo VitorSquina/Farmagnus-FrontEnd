@@ -1,3 +1,4 @@
+import { data } from 'react-router-dom';
 import { FirstTemplate } from '../../Templates/FirstTemplate/FirstTemplate';
 import { Header } from './components/Header/Header';
 import { HorariosEntrega } from './components/HorariosEntregas/HorariosEntrega';
@@ -127,6 +128,28 @@ export const Horarios = () => {
       horarios: [],
     },
   ];
+  const horariosFeriados = [
+    {
+      dataFeriado: '25/12/2025',
+      nomeFeriado: 'Natal',
+      horarios: [
+        {
+          horaAbertura: '08:00',
+          horaFechamento: '20:00',
+        },
+      ],
+    },
+    {
+      dataFeriado: '09/07/2025',
+      nomeFeriado: 'Independencia do Brasil',
+      horarios: [
+        {
+          horaAbertura: '08:00',
+          horaFechamento: '20:00',
+        },
+      ],
+    },
+  ];
 
   return (
     <FirstTemplate>
@@ -152,7 +175,7 @@ export const Horarios = () => {
             <HorariosEntrega data={horariosEntregas} />
           </TabPanel>
           <TabPanel className={styles.tabPanel}>
-            <HorariosFeriados />
+            <HorariosFeriados data={horariosFeriados} />
           </TabPanel>
         </Tabs>
       </div>
